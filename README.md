@@ -51,8 +51,20 @@ Chaîne complète : **SSIS** (ETL) → **SQL Server** (Data Warehouse) → **SSA
 |---|---|---|
 | SQL Server | Script du DW + dimensions Date, Géographie, Pays | - |
 | SSIS | Réfugiés + rapatriés, Population, Pauvreté | Conflits, Pluie, Risque national |
-| Analyse | Tableau | Cube SSAS + requêtes MDX |
+| SSAS | - | Cube SSAS + requêtes MDX |
+| Tableau (à deux) | Tableau de bord 1 « Réfugiés » + 2 « Régions » (population, pauvreté, carte) | Tableau de bord 3 « Pluie » + 4 « Conflits et risque » |
+| Tableau (ensemble) | Tableau de bord de synthèse + assemblage dans un seul classeur | ← |
 | Livrable | Ses sections + captures | Ses sections + assemblage |
+
+### Travailler à deux sur Tableau
+
+Un classeur Tableau (`.twb`) est un fichier XML que Git fusionne mal : **chacun travaille dans son propre classeur**, branché sur le même cube / DW.
+
+- `tableau/abdou.twb` : tableaux de bord 1 et 2
+- `tableau/essorong.twb` : tableaux de bord 3 et 4
+- `tableau/final.twbx` : assemblé ensemble à la fin (feuilles copiées-collées d'un classeur à l'autre), puis tableau de bord de synthèse
+
+Mêmes couleurs, mêmes polices et mêmes noms de champs dans les deux classeurs, pour que l'assemblage soit propre.
 
 ## Planning
 
