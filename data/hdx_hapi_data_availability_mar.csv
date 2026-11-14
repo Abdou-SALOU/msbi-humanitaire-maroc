@@ -1,0 +1,57 @@
+category,subcategory,location_code,admin1_code,admin1_name,admin2_code,admin2_name,admin_level,hapi_updated_date
+coordination-context,conflict-events,MAR,,,,,0,2026-11-12
+climate,hazards-rainfall,MAR,MA001,Beni Mellal Khenifra,,,1,2026-11-12
+climate,hazards-rainfall,MAR,MA002,Casablanca Settat,,,1,2026-11-12
+climate,hazards-rainfall,MAR,MA003,Draa Tafilalet,,,1,2026-11-12
+climate,hazards-rainfall,MAR,MA004,Fez Meknes,,,1,2026-11-12
+climate,hazards-rainfall,MAR,MA005,Guelmim Oued Noun,,,1,2026-11-12
+climate,hazards-rainfall,MAR,MA006,Marrakech Safi,,,1,2026-11-12
+climate,hazards-rainfall,MAR,MA007,Oriental,,,1,2026-11-12
+climate,hazards-rainfall,MAR,MA008,Rabat Sale Kenitra,,,1,2026-11-12
+climate,hazards-rainfall,MAR,MA010,Tangier Tetouan Al Hoceima,,,1,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA001,Beni Mellal Khenifra,MA001001,Province d Azilal,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA001,Beni Mellal Khenifra,MA001002,Province de Beni Mellal,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA001,Beni Mellal Khenifra,MA001003,Province de Fquih Ben Saleh,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA001,Beni Mellal Khenifra,MA001004,Province de Khenifra,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA001,Beni Mellal Khenifra,MA001005,Province de Khouribga,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA002,Casablanca Settat,MA002001,Berrechid Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA002,Casablanca Settat,MA002002,El Jadida Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA002,Casablanca Settat,MA002003,Mediouna Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA002,Casablanca Settat,MA002004,Nouaceur Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA002,Casablanca Settat,MA002005,Prefecture of Casablanca,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA002,Casablanca Settat,MA002006,Prefecture of Mohammedia,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA002,Casablanca Settat,MA002007,Province de Benslimane,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA002,Casablanca Settat,MA002008,Province de Sidi Bennour,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA002,Casablanca Settat,MA002009,Settat Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA003,Draa Tafilalet,MA003001,Ouarzazate Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA003,Draa Tafilalet,MA003005,Zagora Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA005,Guelmim Oued Noun,MA005002,Guelmim Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA005,Guelmim Oued Noun,MA005004,Sidi Ifni Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA006,Marrakech Safi,MA006001,Al Haouz Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA006,Marrakech Safi,MA006002,Chichaoua Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA006,Marrakech Safi,MA006003,Essaouira Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA006,Marrakech Safi,MA006004,Prefecture de Marrakech,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA006,Marrakech Safi,MA006005,Province d El Kelaat Es Sraghna,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA006,Marrakech Safi,MA006006,Province de Safi,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA006,Marrakech Safi,MA006007,Province de Youssoufia,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA006,Marrakech Safi,MA006008,Rhamna Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA009,Souss Massa,MA009001,Agadir Ida Outanane Prefecture,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA009,Souss Massa,MA009002,Chtouka Ait Baha Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA009,Souss Massa,MA009003,Inezgane Ait Melloul Prefecture,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA009,Souss Massa,MA009004,Taroudant Province,2,2026-11-12
+geography-infrastructure,baseline-population,MAR,MA009,Souss Massa,MA009006,Tiznit Province,2,2026-11-12
+affected-people,returnees,MAR,,,,,0,2026-11-12
+affected-people,refugees-persons-of-concern,MAR,,,,,0,2026-11-12
+coordination-context,national-risk,MAR,,,,,0,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,MA001,Beni Mellal Khenifra,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,,,,,0,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,MA010,Tangier Tetouan Al Hoceima,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,,,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,MA003,Draa Tafilalet,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,MA009,Souss Massa,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,MA007,Oriental,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,MA008,Rabat Sale Kenitra,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,MA005,Guelmim Oued Noun,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,MA002,Casablanca Settat,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,MA004,Fez Meknes,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,MAR,MA006,Marrakech Safi,,,1,2026-11-12

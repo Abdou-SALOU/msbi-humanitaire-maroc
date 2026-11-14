@@ -1,0 +1,26 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dtproj.user
+*.database.user
+
+# SSIS / SSAS : fichiers générés
+*.ispac
+*.asdatabase
+*.deploymentoptions
+*.deploymenttargets
+*.configsettings
+
+# Tableau : fichiers temporaires
+*.tmp
+~*
+
+# Divers
+installation_log*.txt
+package.json
+Thumbs.db
+desktop.ini

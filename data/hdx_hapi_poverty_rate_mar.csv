@@ -1,0 +1,15 @@
+location_code,has_hrp,in_gho,provider_admin1_name,admin1_code,admin1_name,admin_level,mpi,headcount_ratio,intensity_of_deprivation,vulnerable_to_poverty,in_severe_poverty,reference_period_start,reference_period_end
+MAR,False,False,,,,0,0.0785,17.2618,45.4527,13.3066,5.8972,2011-01-01,2011-12-31
+MAR,False,False,,,,0,0.0334,7.861,42.5348,10.1025,1.891,2017-01-01,2018-12-31
+MAR,False,False,Béni Mellal-Khénifra,MA001,Beni Mellal Khenifra,1,0.0702,14.2242,49.3576,10.5004,6.3548,2017-01-01,2018-12-31
+MAR,False,False,Casablanca- Settat,MA002,Casablanca Settat,1,0.0139,3.4795,39.8256,8.7712,0.5043,2017-01-01,2018-12-31
+MAR,False,False,Drâa-Tafilalet,MA003,Draa Tafilalet,1,0.0403,9.068,44.394,16.2484,2.3767,2017-01-01,2018-12-31
+MAR,False,False,Ed Dakhla-Oued ed Dahab,,,1,0.0165,4.2801,38.5493,12.088,0.1552,2017-01-01,2018-12-31
+MAR,False,False,Fès-Meknès,MA004,Fez Meknes,1,0.0234,5.76,40.5856,11.1372,1.1207,2017-01-01,2018-12-31
+MAR,False,False,Guelmim-Oued Noun,MA005,Guelmim Oued Noun,1,0.0169,4.8041,35.1001,7.363,0.0465,2017-01-01,2018-12-31
+MAR,False,False,Laâyoune-Sakia El Hamra,,,1,0.0101,2.6908,37.6557,13.6787,0.0468,2017-01-01,2018-12-31
+MAR,False,False,Marrakech-Safi,MA006,Marrakech Safi,1,0.0387,9.6827,39.9578,12.9778,1.4957,2017-01-01,2018-12-31
+MAR,False,False,Oriental,MA007,Oriental,1,0.042,9.1693,45.8058,12.9378,3.4988,2017-01-01,2018-12-31
+MAR,False,False,Rabat-Salé-Kénitra,MA008,Rabat Sale Kenitra,1,0.0136,3.6743,36.9475,8.5287,0.3303,2017-01-01,2018-12-31
+MAR,False,False,Souss-Massa,MA009,Souss Massa,1,0.03,7.4098,40.4591,8.1024,1.5635,2017-01-01,2018-12-31
+MAR,False,False,Tanger-Tetouan-Al Hoceima,MA010,Tangier Tetouan Al Hoceima,1,0.0139,3.6283,38.1771,13.0873,0.1802,2017-01-01,2018-12-31
