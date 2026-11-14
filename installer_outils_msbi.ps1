@@ -39,7 +39,20 @@ if (-not (Get-Service MSSQLSERVER -ErrorAction SilentlyContinue)) {
 Installer-Paquet 'Microsoft.SQLServerManagementStudio.22' @()
 
 # 3. Visual Studio 2022 Community (charge de travail Donnees)
-Installer-Paquet 'Microsoft.VisualStudio.2022.Community' @('--override','--quiet --wait --norestart --add Microsoft.VisualStudio.Workload.Data --includeRecommended')
+$vsPath  = 'C:\Program Files\Microsoft Visual Studio\2022\Community'
+$vsSetup = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\setup.exe"
+if (Test-Path "$vsPath\Common7\IDE\devenv.exe") {
+    Log "Visual Studio 2022 deja installe"
+} elseif (Test-Path $vsPath) {
+    Log "Visual Studio 2022 incomplet (installation interrompue) : reprise"
+    $p = Start-Process $vsSetup -ArgumentList "resume --installPath `"$vsPath`" --quiet --norestart" -Wait -PassThru
+    Log "Reprise Visual Studio -> code $($p.ExitCode) (0 ou 3010 = OK)"
+    $p = Start-Process $vsSetup -ArgumentList "modify --installPath `"$vsPath`" --add Microsoft.VisualStudio.Workload.Data --includeRecommended --quiet --norestart" -Wait -PassThru
+    Log "Ajout charge de travail Donnees -> code $($p.ExitCode) (0 ou 3010 = OK)"
+} else {
+    Installer-Paquet 'Microsoft.VisualStudio.2022.Community' @('--override','--quiet --wait --norestart --add Microsoft.VisualStudio.Workload.Data --includeRecommended')
+}
+if (-not (Test-Path "$vsPath\Common7\IDE\devenv.exe")) { Log "ATTENTION : Visual Studio toujours absent, les extensions vont echouer" }
 
 # 4. Extension SSIS
 Installer-Paquet 'Microsoft.DataTools.IntegrationServices' @()
