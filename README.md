@@ -84,11 +84,3 @@ Mêmes couleurs, mêmes polices et mêmes noms de champs dans les deux classeurs
 2. Commits petits et fréquents, avec un message clair : `ssis: package F_Pluie (filtre décade + version finale)`.
 3. **Fermer Visual Studio avant de faire un commit** sur un projet SSIS ou SSAS.
 4. Ne jamais travailler à deux en même temps sur le même package `.dtsx` ou le même cube : ces fichiers XML se fusionnent mal.
-5. Noter dans la section « Journal » ci-dessous ce qui est fini et ce qui bloque.
-
-## Journal
-
-| Date | Qui | Fait | Reste / blocage |
-|---|---|---|---|
-| 13/11 | Abdou | Dataset téléchargé et analysé | - |
-| 14/11 | Abdou | Dépôt créé, installation des outils lancée | - |
