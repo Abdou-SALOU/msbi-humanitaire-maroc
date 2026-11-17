@@ -1,0 +1,192 @@
+iso3;nom_pays;inform_risque_2026;inform_classe_risque;inform_rang
+AFG;Afghanistan;7.8;Very High;6
+ALB;Albania;3.1;Low;118
+DZA;Algeria;4.3;Medium;75
+AGO;Angola;6.0;High;27
+ATG;Antigua and Barbuda;2.1;Very Low;165
+ARG;Argentina;3.7;Medium;94
+ARM;Armenia;3.4;Low;108
+AUS;Australia;2.4;Low;157
+AUT;Austria;2.4;Low;157
+AZE;Azerbaijan;4.8;Medium;63
+BHS;Bahamas;2.5;Low;148
+BHR;Bahrain;1.7;Very Low;182
+BGD;Bangladesh;6.2;High;25
+BRB;Barbados;2.2;Very Low;164
+BLR;Belarus;2.6;Low;138
+BEL;Belgium;2.6;Low;138
+BLZ;Belize;3.8;Medium;90
+BEN;Benin;5.6;High;35
+BTN;Bhutan;2.9;Low;124
+BOL;Bolivia;4.6;Medium;67
+BIH;Bosnia and Herzegovina;3.6;Medium;98
+BWA;Botswana;3.3;Low;110
+BRA;Brazil;5.1;Medium;54
+BRN;Brunei Darussalam;2.3;Very Low;159
+BGR;Bulgaria;2.6;Low;138
+BFA;Burkina Faso;7.2;Very High;12
+BDI;Burundi;6.4;High;21
+CPV;Cabo Verde;2.6;Low;138
+KHM;Cambodia;5.1;Medium;54
+CMR;Cameroon;6.8;High;18
+CAN;Canada;2.8;Low;130
+CAF;Central African Republic;7.6;Very High;9
+TCD;Chad;7.9;Very High;5
+CHL;Chile;3.3;Low;110
+CHN;China;2.9;Low;124
+COL;Colombia;5.3;Medium;46
+COM;Comoros;3.3;Low;110
+COG;Congo;5.8;High;30
+COD;Congo DR;8.0;Very High;4
+CRI;Costa Rica;3.7;Medium;94
+CIV;Côte d'Ivoire;5.3;Medium;46
+HRV;Croatia;2.5;Low;148
+CUB;Cuba;3.5;Low;102
+CYP;Cyprus;2.9;Low;124
+CZE;Czech Republic;1.9;Very Low;174
+DNK;Denmark;1.3;Very Low;188
+DJI;Djibouti;5.5;High;40
+DMA;Dominica;2.6;Low;138
+DOM;Dominican Republic;4.9;Medium;60
+ECU;Ecuador;5.6;High;35
+EGY;Egypt;5.0;Medium;59
+SLV;El Salvador;4.2;Medium;79
+GNQ;Equatorial Guinea;3.5;Low;102
+ERI;Eritrea;4.8;Medium;63
+EST;Estonia;1.9;Very Low;174
+SWZ;Eswatini;4.3;Medium;75
+ETH;Ethiopia;7.0;Very High;16
+FJI;Fiji;3.1;Low;118
+FIN;Finland;1.9;Very Low;174
+FRA;France;2.6;Low;138
+GAB;Gabon;3.7;Medium;94
+GMB;Gambia;4.6;Medium;67
+GEO;Georgia;3.5;Low;102
+DEU;Germany;2.6;Low;138
+GHA;Ghana;4.6;Medium;67
+GRC;Greece;3.0;Low;120
+GRD;Grenada;2.8;Low;130
+GTM;Guatemala;5.8;High;30
+GIN;Guinea;5.4;High;43
+GNB;Guinea-Bissau;4.3;Medium;75
+GUY;Guyana;3.9;Medium;87
+HTI;Haiti;7.5;Very High;10
+HND;Honduras;5.6;High;35
+HUN;Hungary;2.3;Very Low;159
+ISL;Iceland;1.6;Very Low;184
+IND;India;5.3;Medium;46
+IDN;Indonesia;4.6;Medium;67
+IRN;Iran;5.9;High;28
+IRQ;Iraq;5.8;High;30
+IRL;Ireland;2.3;Very Low;159
+ISR;Israel;3.2;Low;115
+ITA;Italy;3.0;Low;120
+JAM;Jamaica;3.8;Medium;90
+JPN;Japan;2.1;Very Low;165
+JOR;Jordan;4.4;Medium;74
+KAZ;Kazakhstan;2.8;Low;130
+KEN;Kenya;6.2;High;25
+KIR;Kiribati;3.6;Medium;98
+PRK;Korea DPR;3.7;Medium;94
+KOR;Korea Republic of;2.0;Very Low;173
+KWT;Kuwait;2.8;Low;130
+KGZ;Kyrgyzstan;3.9;Medium;87
+LAO;Lao PDR;3.8;Medium;90
+LVA;Latvia;2.6;Low;138
+LBN;Lebanon;6.3;High;23
+LSO;Lesotho;4.2;Medium;79
+LBR;Liberia;5.3;Medium;46
+LBY;Libya;5.8;High;30
+LIE;Liechtenstein;1.0;Very Low;189
+LTU;Lithuania;2.1;Very Low;165
+LUX;Luxembourg;1.0;Very Low;189
+MDG;Madagascar;5.8;High;30
+MWI;Malawi;5.4;High;43
+MYS;Malaysia;3.6;Medium;98
+MDV;Maldives;2.1;Very Low;165
+MLI;Mali;7.1;Very High;13
+MLT;Malta;1.7;Very Low;182
+MHL;Marshall Islands;3.5;Low;102
+MRT;Mauritania;5.5;High;40
+MUS;Mauritius;2.1;Very Low;165
+MEX;Mexico;4.8;Medium;63
+FSM;Micronesia;3.3;Low;110
+MDA;Moldova Republic of;3.8;Medium;90
+MNG;Mongolia;2.8;Low;130
+MNE;Montenegro;2.6;Low;138
+MAR;Morocco;4.1;Medium;83
+MOZ;Mozambique;7.1;Very High;13
+MMR;Myanmar;6.9;High;17
+NAM;Namibia;4.3;Medium;75
+NRU;Nauru;2.1;Very Low;165
+NPL;Nepal;4.9;Medium;60
+NLD;Netherlands;2.5;Low;148
+NZL;New Zealand;1.6;Very Low;184
+NIC;Nicaragua;4.5;Medium;72
+NER;Niger;7.5;Very High;10
+NGA;Nigeria;7.1;Very High;13
+MKD;North Macedonia;2.7;Low;135
+NOR;Norway;1.9;Very Low;174
+OMN;Oman;2.3;Very Low;159
+PAK;Pakistan;6.6;High;19
+PLW;Palau;2.1;Very Low;165
+PSE;Palestine;6.4;High;21
+PAN;Panama;4.0;Medium;84
+PNG;Papua New Guinea;6.3;High;23
+PRY;Paraguay;3.4;Low;108
+PER;Peru;5.2;Medium;53
+PHL;Philippines;5.3;Medium;46
+POL;Poland;2.5;Low;148
+PRT;Portugal;1.9;Very Low;174
+QAT;Qatar;1.4;Very Low;186
+ROU;Romania;3.0;Low;120
+RUS;Russian Federation;4.0;Medium;84
+RWA;Rwanda;5.1;Medium;54
+KNA;Saint Kitts and Nevis;1.9;Very Low;174
+LCA;Saint Lucia;2.5;Low;148
+VCT;Saint Vincent and the Grenadines;2.9;Low;124
+WSM;Samoa;2.7;Low;135
+STP;Sao Tome and Principe;2.5;Low;148
+SAU;Saudi Arabia;2.7;Low;135
+SEN;Senegal;4.7;Medium;66
+SRB;Serbia;3.5;Low;102
+SYC;Seychelles;1.4;Very Low;186
+SLE;Sierra Leone;5.1;Medium;54
+SGP;Singapore;0.7;Very Low;191
+SVK;Slovakia;2.9;Low;124
+SVN;Slovenia;2.5;Low;148
+SLB;Solomon Islands;4.2;Medium;79
+SOM;Somalia;8.1;Very High;2
+ZAF;South Africa;5.1;Medium;54
+SSD;South Sudan;8.5;Very High;1
+ESP;Spain;2.6;Low;138
+LKA;Sri Lanka;4.2;Medium;79
+SDN;Sudan;7.8;Very High;6
+SUR;Suriname;3.2;Low;115
+SWE;Sweden;1.9;Very Low;174
+CHE;Switzerland;1.8;Very Low;181
+SYR;Syria;7.8;Very High;6
+TJK;Tajikistan;4.6;Medium;67
+TZA;Tanzania;5.6;High;35
+THA;Thailand;4.9;Medium;60
+TLS;Timor-Leste;3.9;Medium;87
+TGO;Togo;5.3;Medium;46
+TON;Tonga;3.0;Low;120
+TTO;Trinidad and Tobago;3.3;Low;110
+TUN;Tunisia;3.5;Low;102
+TUR;Türkiye;5.4;High;43
+TKM;Turkmenistan;2.9;Low;124
+TUV;Tuvalu;2.5;Low;148
+UGA;Uganda;6.5;High;20
+UKR;Ukraine;5.6;High;35
+ARE;United Arab Emirates;2.3;Very Low;159
+GBR;United Kingdom;2.1;Very Low;165
+USA;United States of America;3.2;Low;115
+URY;Uruguay;2.5;Low;148
+UZB;Uzbekistan;3.6;Medium;98
+VUT;Vanuatu;4.5;Medium;72
+VEN;Venezuela;5.9;High;28
+VNM;Viet Nam;4.0;Medium;84
+YEM;Yemen;8.1;Very High;2
+ZMB;Zambia;5.5;High;40
+ZWE;Zimbabwe;5.3;Medium;46
