@@ -1,6 +1,6 @@
 # Projet MSBI - Indicateurs humanitaires et socio-économiques au Maroc
 
-Projet décisionnel du module **ETL et Data Warehousing** (Pr Mohammed HANINE), 3ᵉ année du cycle ingénieur IABD, ISGA Casablanca.
+Projet décisionnel du module **ETL et Data Warehousing** (Pr. Hanine Mohamed), 3ᵉ année du cycle ingénieur IABD, ISGA Casablanca.
 
 **Binôme :** Abdou SALOU ABDOU et Essorong BADJAMLA
 

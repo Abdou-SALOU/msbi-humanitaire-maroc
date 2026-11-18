@@ -58,9 +58,9 @@ Dans chaque **Gestionnaire de connexions de fichiers plats** (*Flat File Connect
 | Paramètres régionaux (*Locale*) | **Anglais (États-Unis)** | Les nombres des fichiers ont un point décimal (`13.18`). En français, SSIS attend une virgule et refuse la conversion. |
 | Page de codes (*Code page*) | **65001 (UTF-8)** | Les fichiers sont en UTF-8 : sinon « Fès » devient « FÃ¨s ». |
 | Format | Délimité | |
-| Qualificateur de texte | `<aucun>` | Aucun champ n'est entre guillemets. |
+| Identificateur de texte | `<aucun>` | Aucun champ n'est entre guillemets. |
 | Délimiteur de ligne d'en-tête | `{CR}{LF}` | |
-| **Noms des colonnes dans la première ligne de données** | coché | |
+| **Noms de colonne dans la première ligne de données** | coché | |
 
 Page **Colonnes** : délimiteur **Virgule {,}** pour les fichiers `hapi`, **Point-virgule {;}** pour les fichiers `prepare`.
 
@@ -85,7 +85,7 @@ Page **Avancé** : régler le **DataType** des colonnes utilisées comme indiqu�
    | nom_region | chaîne Unicode [DT_WSTR] | 60 |
    | nom_hapi | chaîne Unicode [DT_WSTR] | 60 |
 
-3. Double-cliquer la source > cocher **Conserver les valeurs NULL de la source en tant que valeurs NULL dans le flux de données**.
+3. Double-cliquer la source > cocher **Conserver les valeurs NULL de la source comme valeurs NULL dans le flux de données**.
    > Pourquoi : Laâyoune et Dakhla n'ont pas de code HAPI. Sans cette case, SSIS écrirait une chaîne vide `''` au lieu de NULL, ce qui fausserait les jointures avec la pluie.
 4. Glisser une **Destination OLE DB**, relier la flèche bleue de la source vers elle. Double-cliquer : connexion `DW`, mode **Table ou vue - chargement rapide**, table `[dbo].[D_Region]`, cocher **Conserver les valeurs NULL**.
 5. Page **Mappages** : vérifier code_hcp, code_hapi, nom_region, nom_hapi. `region_key` reste `<ignorer>` : c'est une **clé de substitution** (IDENTITY) générée par SQL Server.
@@ -155,7 +155,7 @@ Mappages : `inform_classe_risque` -> `inform_classe`. Résultat attendu : **191 
    > `2025-01-01` -> `20250101`, la clé de D_Date.
 
 4. **Recherche** (*Lookup*) `Pays origine` :
-   - Général : **Cache complet** ; lignes sans correspondance : **Échec du composant**.
+   - Général : Mode de cache **Cache complet** ; « Spécifier comment gérer les lignes sans entrées correspondantes » : laisser le choix par défaut (le composant échoue).
    - Connexion : `DW`, **Utiliser les résultats d'une requête SQL** : `SELECT pays_key, iso3 FROM dbo.D_Pays`
    - Colonnes : relier `origin_location_code` -> `iso3`, cocher `pays_key`, alias de sortie **`pays_origine_key`**.
 

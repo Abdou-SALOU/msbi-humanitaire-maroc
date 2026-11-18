@@ -15,7 +15,7 @@ Tableau Desktop > Se connecter > À un serveur > **Microsoft Analysis Services**
 
 > À dire : Tableau ne lit pas les tables, il envoie des **requêtes MDX** au cube. Les calculs (taux, moyennes pondérées) sont faits une seule fois dans le cube, et tous les tableaux de bord affichent les mêmes chiffres.
 
-**Limite connue des cubes dans Tableau :** pas de carte automatique (les rôles géographiques ne s'appliquent pas aux dimensions d'un cube). Si vous voulez une carte, ajouter une 2e source directement sur le DW SQL Server (`DW_Humanitaire_Maroc`) et tester si Tableau reconnaît les 12 régions. Sinon, des barres triées suffisent.
+**Limites des sources de type cube dans Tableau :** pas d'extraits, pas d'expressions LOD, de courbes de tendance, de prévisions ni de clusters, et les hiérarchies doivent être définies dans le cube. Pour une carte, ajouter une 2e source directement sur le DW SQL Server (`DW_Humanitaire_Maroc`) et tester si Tableau reconnaît les 12 régions. Sinon, des barres triées suffisent.
 
 ## 2. Règles communes (pour que l'assemblage soit propre)
 
