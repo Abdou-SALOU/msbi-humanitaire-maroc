@@ -1,0 +1,3 @@
+# Fichiers de données : fins de ligne Windows (CRLF), attendues par SSIS ({CR}{LF})
+*.csv text eol=crlf
+*.sql text eol=crlf

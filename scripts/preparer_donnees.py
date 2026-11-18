@@ -8,10 +8,14 @@ Utilisation (depuis la racine du dépôt) :
     python scripts/preparer_donnees.py
 
 Sorties dans data/prepare/ (séparateur « ; », UTF-8, décimales avec un point) :
-    regions.csv                     12 régions, code HCP + code HAPI
-    pays.csv                        191 pays (nom + score de risque INFORM 2026)
-    hcp_indicateurs_region_2024.csv 12 régions x milieu (Ensemble, Urbain, Rural)
-    hcp_pauvrete_region.csv         12 régions x milieu x année (2014, 2024)
+    regions.csv                       12 régions, code HCP + code HAPI
+    pays.csv                          191 pays (nom + score de risque INFORM 2026)
+    hcp_indicateurs_region_2024.csv   12 régions x milieu : indicateurs du recensement
+    hcp_population_legale_2024.csv    12 régions x milieu : Marocains, étrangers, ménages
+                                      (autre fichier HCP -> fusionné dans SSIS par Merge Join)
+    hcp_pauvrete_ensemble.csv         12 régions x 2014/2024, un fichier par milieu
+    hcp_pauvrete_urbain.csv           (comme les 3 feuilles de l'Excel)
+    hcp_pauvrete_rural.csv            -> fusionnés dans SSIS par Union All
 """
 from pathlib import Path
 import warnings
@@ -71,7 +75,7 @@ def code_region(serie):
 
 def ecrire(df, nom):
     chemin = SORTIE / nom
-    df.to_csv(chemin, sep=";", index=False, encoding="utf-8")
+    df.to_csv(chemin, sep=";", index=False, encoding="utf-8", lineterminator="\r\n")  # CRLF : attendu par SSIS
     print(f"{nom:36s} {len(df):5d} lignes")
 
 
@@ -91,7 +95,7 @@ def preparer_pays():
 def preparer_indicateurs():
     fichier = HCP / "hcp_indicateurs_rgph_2024.xlsx"
     legale = pd.read_excel(HCP / "hcp_population_legale_2024.xlsx", header=None)
-    lignes = []
+    lignes, lignes_leg = [], []
     for milieu, (f_pop, f_men) in FEUILLES_MILIEU.items():
         pop = pd.read_excel(fichier, sheet_name=f_pop, header=None)
         men = pd.read_excel(fichier, sheet_name=f_men, header=None)
@@ -113,38 +117,46 @@ def preparer_indicateurs():
             ligne = {"code_hcp": c, "milieu": milieu, "annee": 2024}
             for i, nom in COLONNES_INDICATEURS.items():
                 ligne[nom] = r[i]
-            ligne["nb_menages"] = men.loc[c, 3]
-            ligne["population_marocaine"] = leg.loc[c, 1]
-            ligne["population_etrangere"] = leg.loc[c, 2]
             lignes.append(ligne)
+            # 2e fichier, issu d'une AUTRE source HCP : il sera fusionné dans SSIS (Merge Join)
+            lignes_leg.append({
+                "code_hcp": c, "milieu": milieu,
+                "population_marocaine": int(leg.loc[c, 1]),
+                "population_etrangere": int(leg.loc[c, 2]),
+                "nb_menages": int(leg.loc[c, 4]),
+                "population_legale_controle": int(leg.loc[c, 3]),
+            })
     df = pd.DataFrame(lignes)
+    dl = pd.DataFrame(lignes_leg)
 
-    # Contrôle : Urbain + Rural = Ensemble pour la population légale
+    # Contrôles : Urbain + Rural = Ensemble ; les deux sources HCP donnent la même population
     piv = df.pivot(index="code_hcp", columns="milieu", values="population_legale")
     assert (piv["Urbain"] + piv["Rural"] == piv["Ensemble"]).all(), "Urbain + Rural != Ensemble"
-    assert (df["population_marocaine"] + df["population_etrangere"] == df["population_legale"]).all()
+    assert (dl["population_marocaine"] + dl["population_etrangere"] == dl["population_legale_controle"]).all()
+    assert (df["population_legale"].astype(int).values == dl["population_legale_controle"].values).all()
+    for c in COLONNES_INDICATEURS.values():
+        if not c.startswith("taux"):
+            df[c] = df[c].astype(int)
     ecrire(df, "hcp_indicateurs_region_2024.csv")
+    ecrire(dl.drop(columns="population_legale_controle"), "hcp_population_legale_2024.csv")
 
 
 def preparer_pauvrete():
+    """Un fichier par milieu (comme les 3 feuilles de l'Excel) : SSIS les fusionne (Union All)."""
     fichier = HCP / "hcp_pauvrete_multidimensionnelle_2014_2024.xls"
-    morceaux = []
-    for milieu, feuille in [("Ensemble", "Ensemble"), ("Urbain", "Urbain"), ("Rural", "Rural")]:
+    for milieu, feuille in [("ensemble", "Ensemble"), ("urbain", "Urbain"), ("rural", "Rural")]:
         brut = pd.read_excel(fichier, sheet_name=feuille, header=None, skiprows=6)
         brut = brut[brut[2] == "région"]
         df = pd.DataFrame({
             "code_hcp": code_region(brut[1]).astype(int),
-            "milieu": milieu,
             "annee": brut[3].astype(int),
-            "indice_pauvrete_multidim": brut[4],
-            "taux_pauvrete_pct": brut[5],
-            "intensite_pauvrete_pct": brut[6],
-            "taux_vulnerabilite_pct": brut[7],
+            "indice_pauvrete_multidim": brut[4].round(6),
+            "taux_pauvrete_pct": brut[5].round(4),
+            "intensite_pauvrete_pct": brut[6].round(4),
+            "taux_vulnerabilite_pct": brut[7].round(4),
         })
-        morceaux.append(df)
-    df = pd.concat(morceaux, ignore_index=True)
-    assert len(df) == 12 * 3 * 2, f"{len(df)} lignes au lieu de 72"
-    ecrire(df, "hcp_pauvrete_region.csv")
+        assert len(df) == 24, f"{feuille} : {len(df)} lignes au lieu de 24"
+        ecrire(df, f"hcp_pauvrete_{milieu}.csv")
 
 
 if __name__ == "__main__":

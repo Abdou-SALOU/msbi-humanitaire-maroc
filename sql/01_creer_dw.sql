@@ -46,7 +46,7 @@ CREATE TABLE dbo.D_Date (
 CREATE TABLE dbo.D_Region (
     region_key      INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     code_hcp        TINYINT      NOT NULL UNIQUE,         -- code officiel HCP 1..12
-    code_hapi       CHAR(5)      NULL,                    -- MA001..MA010 (vide pour Laâyoune et Dakhla)
+    code_hapi       NVARCHAR(5)  NULL,                    -- MA001..MA010 (vide pour Laâyoune et Dakhla)
     nom_region      NVARCHAR(60) NOT NULL,
     nom_hapi        NVARCHAR(60) NULL
 );
@@ -61,7 +61,7 @@ CREATE TABLE dbo.D_Milieu (
 -- dans F_Refugies : pays d'origine et pays d'asile
 CREATE TABLE dbo.D_Pays (
     pays_key            INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    iso3                CHAR(3)       NOT NULL UNIQUE,
+    iso3                NVARCHAR(3)   NOT NULL UNIQUE,
     nom_pays            NVARCHAR(80)  NOT NULL,
     inform_risque_2026  DECIMAL(3,1)  NULL,               -- 0 à 10
     inform_classe       NVARCHAR(15)  NULL,               -- Very Low .. Very High
@@ -71,14 +71,14 @@ CREATE TABLE dbo.D_Pays (
 -- Statut des personnes déplacées (rempli par 02)
 CREATE TABLE dbo.D_GroupePopulation (
     groupe_key      TINYINT      NOT NULL PRIMARY KEY,
-    code_groupe     CHAR(3)      NOT NULL UNIQUE,         -- REF, ASY, OOC
+    code_groupe     NVARCHAR(3)  NOT NULL UNIQUE,         -- REF, ASY, OOC
     libelle         NVARCHAR(60) NOT NULL
 );
 
 -- Type d'événement de conflit (rempli par 02)
 CREATE TABLE dbo.D_TypeEvenement (
     type_key        TINYINT      NOT NULL PRIMARY KEY,
-    code_type       VARCHAR(30)  NOT NULL UNIQUE,         -- valeur du CSV ACLED
+    code_type       NVARCHAR(30) NOT NULL UNIQUE,         -- valeur du CSV ACLED
     libelle         NVARCHAR(60) NOT NULL
 );
 GO
@@ -110,7 +110,7 @@ CREATE TABLE dbo.F_Conflits (
 CREATE TABLE dbo.F_Pluie (
     date_key                INT           NOT NULL REFERENCES dbo.D_Date(date_key),  -- 1er jour de la décade
     region_key              INT           NOT NULL REFERENCES dbo.D_Region(region_key),
-    code_zone               VARCHAR(10)   NOT NULL,                                  -- provider_admin1_code
+    code_zone               NVARCHAR(10)  NOT NULL,                                  -- provider_admin1_code
     nb_pixels               INT           NOT NULL,
     pluie_x_pixels          DECIMAL(18,4) NOT NULL,                                  -- rainfall * pixels (mm)
     moyenne_lt_x_pixels     DECIMAL(18,4) NOT NULL,                                  -- moyenne long terme * pixels
@@ -137,7 +137,7 @@ CREATE TABLE dbo.F_Indicateurs_Region (
 );
 
 -- Pauvreté multidimensionnelle (HCP), 2014 et 2024, par région et milieu (Ensemble, Urbain, Rural).
--- Ce sont des taux : NON additifs (dans le cube, agrégation = None ou moyenne, jamais Sum).
+-- Ce sont des taux : NON additifs. Le cube garde Somme + Nombre de lignes et affiche Somme / Nombre.
 CREATE TABLE dbo.F_Pauvrete (
     date_key                    INT          NOT NULL REFERENCES dbo.D_Date(date_key),   -- 20140101 ou 20240101
     region_key                  INT          NOT NULL REFERENCES dbo.D_Region(region_key),

@@ -1,0 +1,77 @@
+/* =====================================================================
+   Calculs du cube « Humanitaire Maroc »
+   À coller dans l'onglet Calculs (Calculations) du cube, en vue Script,
+   SOUS la ligne CALCULATE; qui y est déjà.
+
+   Principe : le DW stocke des effectifs et des sommes (additifs) ; les taux
+   et les moyennes sont recalculés ici, à n'importe quel niveau d'agrégation
+   (une région, un milieu, tout le Maroc). Un taux ne s'additionne jamais.
+   Les noms des mesures de base sont ceux du guide 02_guide_SSAS.md, étape 6.
+   ===================================================================== */
+
+/* ---------- Pluie : moyennes pondérées par la surface (pixels) ---------- */
+CREATE MEMBER CURRENTCUBE.[Measures].[Pluie moyenne]
+ AS IIF([Measures].[Pixels] = 0, NULL, [Measures].[Pluie x pixels] / [Measures].[Pixels]),
+ FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Pluie', VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Normale de pluie]
+ AS IIF([Measures].[Pixels] = 0, NULL, [Measures].[Normale x pixels] / [Measures].[Pixels]),
+ FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Pluie', VISIBLE = 1;
+
+/* 100 = pluie normale ; 80 = 20 % de déficit ; 120 = 20 % d'excédent */
+CREATE MEMBER CURRENTCUBE.[Measures].[Anomalie pluie]
+ AS IIF([Measures].[Normale x pixels] = 0, NULL,
+        100 * [Measures].[Pluie x pixels] / [Measures].[Normale x pixels]),
+ FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Pluie', VISIBLE = 1;
+
+/* ---------- Recensement 2024 : taux recalculés à partir des effectifs ---------- */
+CREATE MEMBER CURRENTCUBE.[Measures].[Taux de chômage]
+ AS IIF([Measures].[Actifs] = 0, NULL, 100 * [Measures].[Chômeurs] / [Measures].[Actifs]),
+ FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Recensement 2024', VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Taux d'activité]
+ AS IIF([Measures].[Population 15 ans et plus] = 0, NULL,
+        100 * [Measures].[Actifs] / [Measures].[Population 15 ans et plus]),
+ FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Recensement 2024', VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Taux d'analphabétisme]
+ AS IIF([Measures].[Population 10 ans et plus] = 0, NULL,
+        100 * [Measures].[Analphabètes] / [Measures].[Population 10 ans et plus]),
+ FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Recensement 2024', VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Taux de handicap]
+ AS IIF([Measures].[Population] = 0, NULL, 100 * [Measures].[Personnes handicapées] / [Measures].[Population]),
+ FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Recensement 2024', VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Part des étrangers]
+ AS IIF([Measures].[Population] = 0, NULL, 100 * [Measures].[Étrangers] / [Measures].[Population]),
+ FORMAT_STRING = "#,##0.00", DISPLAY_FOLDER = 'Recensement 2024', VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Taille moyenne des ménages]
+ AS IIF([Measures].[Ménages] = 0, NULL, [Measures].[Population] / [Measures].[Ménages]),
+ FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Recensement 2024', VISIBLE = 1;
+
+/* ---------- Pauvreté : moyennes des taux régionaux (somme / nombre de lignes) ----------
+   Pour UNE région, un milieu et une année : la valeur exacte du HCP.
+   Au-dessus (plusieurs régions) : moyenne simple des régions, non pondérée par la population. */
+CREATE MEMBER CURRENTCUBE.[Measures].[Taux de pauvreté]
+ AS IIF([Measures].[Lignes pauvreté] = 0, NULL, [Measures].[Somme taux pauvreté] / [Measures].[Lignes pauvreté]),
+ FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Pauvreté', VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Indice de pauvreté]
+ AS IIF([Measures].[Lignes pauvreté] = 0, NULL, [Measures].[Somme IPM] / [Measures].[Lignes pauvreté]),
+ FORMAT_STRING = "0.0000", DISPLAY_FOLDER = 'Pauvreté', VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Intensité de la pauvreté]
+ AS IIF([Measures].[Lignes pauvreté] = 0, NULL, [Measures].[Somme intensité] / [Measures].[Lignes pauvreté]),
+ FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Pauvreté', VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Taux de vulnérabilité]
+ AS IIF([Measures].[Lignes pauvreté] = 0, NULL, [Measures].[Somme vulnérabilité] / [Measures].[Lignes pauvreté]),
+ FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Pauvreté', VISIBLE = 1;
+
+/* ---------- Réfugiés : évolution d'une année sur l'autre ---------- */
+CREATE MEMBER CURRENTCUBE.[Measures].[Évolution annuelle personnes]
+ AS IIF(([Measures].[Personnes], [Date].[Annee].CurrentMember.PrevMember) = 0, NULL,
+        100 * ([Measures].[Personnes] / ([Measures].[Personnes], [Date].[Annee].CurrentMember.PrevMember) - 1)),
+ FORMAT_STRING = "+#,##0.0;-#,##0.0", DISPLAY_FOLDER = 'Réfugiés', VISIBLE = 1;

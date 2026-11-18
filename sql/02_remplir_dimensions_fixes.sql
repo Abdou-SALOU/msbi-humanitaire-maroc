@@ -32,15 +32,15 @@ INSERT INTO dbo.D_Milieu VALUES (1, N'Ensemble'), (2, N'Urbain'), (3, N'Rural');
 
 DELETE FROM dbo.D_GroupePopulation;
 INSERT INTO dbo.D_GroupePopulation VALUES
-    (1, 'REF', N'Réfugiés'),
-    (2, 'ASY', N'Demandeurs d''asile'),
-    (3, 'OOC', N'Autres personnes relevant du HCR');
+    (1, N'REF', N'Réfugiés'),
+    (2, N'ASY', N'Demandeurs d''asile'),
+    (3, N'OOC', N'Autres personnes relevant du HCR');
 
 DELETE FROM dbo.D_TypeEvenement;
 INSERT INTO dbo.D_TypeEvenement VALUES
-    (1, 'political_violence', N'Violence politique'),
-    (2, 'civilian_targeting', N'Violence contre les civils'),
-    (3, 'demonstration',      N'Manifestations');
+    (1, N'political_violence', N'Violence politique'),
+    (2, N'civilian_targeting', N'Violence contre les civils'),
+    (3, N'demonstration',      N'Manifestations');
 GO
 
 SELECT 'D_Date' AS dimension, COUNT(*) AS lignes FROM dbo.D_Date
