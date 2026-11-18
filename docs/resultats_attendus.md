@@ -1,6 +1,6 @@
 # Résultats attendus (calculés depuis les fichiers sources)
 
-Généré par `scripts/resultats_attendus.py`. Si le DW ou le cube donne autre chose, un package SSIS ou une mesure du cube est à revoir.
+Calculé par `scripts/resultats_attendus.py`. Si le DW ou le cube donne autre chose, un package SSIS ou une mesure du cube est à revoir.
 
 ## Contrôles après SSIS (doivent correspondre à sql/03_controles.sql)
 | contrôle                                       |   valeur attendue |

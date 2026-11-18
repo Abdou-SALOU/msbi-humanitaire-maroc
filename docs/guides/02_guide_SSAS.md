@@ -1,7 +1,7 @@
 # Guide SSAS - cube OLAP et requêtes MDX pas à pas
 
 But : construire dans Visual Studio le cube **Humanitaire Maroc** sur `DW_Humanitaire_Maroc`, le déployer, puis lancer les 8 requêtes MDX de `ssas/mdx/requetes_mdx.mdx`.
-Chaque étape dit quoi faire, pourquoi, et quelle capture prendre (📸).
+Chaque étape dit quoi faire, pourquoi, et quelle capture prendre.
 
 **Le cube peut être construit AVANT que SSIS ait chargé les données** : il suffit que les tables existent (`sql/01`, `sql/02`). On le « traite » (*process*) une fois les données chargées.
 
@@ -22,7 +22,7 @@ Explorateur de solutions > **Sources de données** > Nouvelle source de données
 - Fournisseur : **Microsoft OLE DB Driver 19 for SQL Server** ; serveur `localhost` ; Authentification Windows ; base `DW_Humanitaire_Maroc` ; onglet **Tout** : **Trust Server Certificate = True**. (Plan B : *Microsoft OLE DB Provider for SQL Server*.)
 - Informations d'emprunt d'identité (*Impersonation*) : **Utiliser le compte de service**.
 
-📸 **Capture S1** : la source de données.
+**Capture S1** : la source de données.
 
 ## 3. Vue de source de données (DSV) (10 min)
 
@@ -32,7 +32,7 @@ Les relations sont créées automatiquement à partir des clés étrangères du 
 - `F_Pluie`, `F_Indicateurs_Region`, `F_Pauvrete` sont liées à `D_Region` ;
 - toutes les tables de faits sont liées à `D_Date`.
 
-📸 **Capture S2** : le diagramme de la DSV. **C'est l'image du schéma en constellation** : 5 tables de faits qui partagent des dimensions (Date, Région, Milieu).
+**Capture S2** : le diagramme de la DSV. **C'est l'image du schéma en constellation** : 5 tables de faits qui partagent des dimensions (Date, Région, Milieu).
 
 > À dire : **constellation de faits** parce que nous avons plusieurs processus métier (réfugiés, conflits, pluie, recensement, pauvreté) avec des grains différents, mais des dimensions communes (temps, région). Une étoile unique aurait forcé un seul grain ; un flocon aurait normalisé les dimensions, inutile ici car elles sont petites.
 
@@ -58,7 +58,7 @@ Dans l'éditeur de la dimension Date :
 3. Onglet **Relations d'attributs** : `Date` -> `Mois` -> `Annee`.
    > Pourquoi : SSAS sait alors qu'un jour appartient à un seul mois et un mois à une seule année ; il pré-calcule les agrégations par année à partir des mois (plus rapide).
 
-📸 **Capture S3** : la hiérarchie Calendrier et les relations d'attributs.
+**Capture S3** : la hiérarchie Calendrier et les relations d'attributs.
 
 ## 5. Cube (20 min)
 
@@ -71,7 +71,7 @@ Clic droit **Cubes** > Nouveau cube > **Utiliser des tables existantes** :
 Dans l'onglet **Utilisation de la dimension** (*Dimension Usage*), la dimension Pays apparaît **deux fois** : renommer ces deux dimensions de cube **Pays Origine** et **Pays Asile**.
 > À dire : **dimension à jeux de rôles** (*role-playing*) : une seule dimension physique, deux usages.
 
-📸 **Capture S4** : l'onglet Utilisation de la dimension (la matrice faits x dimensions).
+**Capture S4** : l'onglet Utilisation de la dimension (la matrice faits x dimensions).
 
 ## 6. Renommer les groupes de mesures et les mesures (15 min)
 
@@ -101,7 +101,7 @@ Onglet **Structure du cube**, volet Mesures : renommer (F2) exactement comme ci-
 | | taux_vulnerabilite_pct | **Somme vulnérabilité** | non |
 | | (mesure « Nombre », AggregateFunction = Count) | **Lignes pauvreté** | non |
 
-- Supprimer les autres mesures « Nombre » créées par l'assistant (Refugies, Conflits, Pluie, Indicateurs), ou les masquer.
+- Supprimer les autres mesures « Nombre » créées automatiquement avec le cube (Refugies, Conflits, Pluie, Indicateurs), ou les masquer.
 - **est_provisoire** (BIT) : ne pas la garder comme mesure.
 
 > Pourquoi des mesures cachées : elles servent seulement aux calculs. On n'affiche que les mesures qui ont un sens pour l'utilisateur.
@@ -112,21 +112,21 @@ Onglet **Calculs** > bouton **Vue Script** > coller le contenu de `ssas/calculs_
 
 > À dire : **un taux ne s'additionne pas**. Le DW stocke des effectifs (chômeurs, actifs) et des produits (pluie x pixels) qui s'additionnent ; le cube recalcule le taux à chaque niveau : `chômeurs / actifs` pour une région, pour un milieu ou pour tout le Maroc. C'est ce qui permet d'afficher le taux national 21,3 % sans l'avoir stocké.
 
-📸 **Capture S5** : l'onglet Calculs.
+**Capture S5** : l'onglet Calculs.
 
 ## 8. Déployer et traiter (10 min)
 
 1. Clic droit sur le projet > **Propriétés** > Déploiement : serveur `localhost`, base **MSBI_Cube**.
 2. Une fois SSIS terminé (DW rempli) : clic droit sur le projet > **Déployer**. Le déploiement envoie la structure ET lance le traitement (chargement des données dans le cube).
 
-📸 **Capture S6** : la fenêtre de progression du déploiement « Déploiement terminé ».
+**Capture S6** : la fenêtre de progression du déploiement « Déploiement terminé ».
 
 ## 9. Navigateur du cube et MDX (20 min)
 
-1. Onglet **Navigateur** (*Browser*) : glisser `Taux de chômage` + `Region` + `Milieu`. 📸 **Capture S7**.
+1. Onglet **Navigateur** (*Browser*) : glisser `Taux de chômage` + `Region` + `Milieu`. **Capture S7**.
 2. SSMS > Se connecter > **Analysis Services** > `localhost` > base `MSBI_Cube` > **Nouvelle requête MDX**. Ouvrir `ssas/mdx/requetes_mdx.mdx`, exécuter les requêtes **une par une** (sélection + F5), comparer à `docs/resultats_attendus.md`.
 
-📸 **Captures S8 à S15** : une par requête MDX (requête + résultat).
+**Captures S8 à S15** : une par requête MDX (requête + résultat).
 
 ## 10. Dépannage
 

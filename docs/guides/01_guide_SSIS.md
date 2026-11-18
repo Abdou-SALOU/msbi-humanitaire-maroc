@@ -1,7 +1,7 @@
 # Guide SSIS - chargement du Data Warehouse pas à pas
 
 But : construire dans Visual Studio les 8 packages SSIS qui remplissent `DW_Humanitaire_Maroc`.
-Chaque étape dit **quoi faire**, **pourquoi** (à savoir expliquer à l'oral) et **quelle capture prendre** (📸) pour le livrable.
+Chaque étape dit **quoi faire**, **pourquoi** (à savoir expliquer à l'oral) et **quelle capture prendre** pour le livrable.
 
 Les noms des menus sont en français, avec le nom anglais entre parenthèses si ton Visual Studio est en anglais.
 
@@ -34,7 +34,7 @@ Les noms des menus sont en français, avec le nom anglais entre parenthèses si 
 2. Nom : `MSBI_ETL`. Emplacement : `...\Projet_MSBI\ssis`. Cocher **Placer la solution et le projet dans le même répertoire**.
 3. Dans l'Explorateur de solutions, renommer `Package.dtsx` en `01_D_Region.dtsx`.
 
-📸 **Capture 1** : l'Explorateur de solutions avec le projet `MSBI_ETL`.
+**Capture 1** : l'Explorateur de solutions avec le projet `MSBI_ETL`.
 
 ### 1.1 Connexion au Data Warehouse (une seule fois, pour tous les packages)
 
@@ -47,7 +47,7 @@ Les noms des menus sont en français, avec le nom anglais entre parenthèses si 
 > Pourquoi au niveau du **projet** : tous les packages réutilisent la même connexion ; si le serveur change, on ne la modifie qu'une fois.
 > Plan B si erreur persistante : fournisseur **Microsoft OLE DB Provider for SQL Server** (ancien, sans chiffrement).
 
-📸 **Capture 2** : la fenêtre de connexion avec « Test de connexion réussi ».
+**Capture 2** : la fenêtre de connexion avec « Test de connexion réussi ».
 
 ### 1.2 Réglage commun de TOUS les fichiers plats (à refaire pour chaque fichier)
 
@@ -91,7 +91,7 @@ Page **Avancé** : régler le **DataType** des colonnes utilisées comme indiqu�
 5. Page **Mappages** : vérifier code_hcp, code_hapi, nom_region, nom_hapi. `region_key` reste `<ignorer>` : c'est une **clé de substitution** (IDENTITY) générée par SQL Server.
 6. Exécuter : **F5** (ou clic droit sur le package > Exécuter le package). Tout doit passer au vert avec **12 lignes**.
 
-📸 **Capture 3** : le flux de données au vert avec « 12 lignes ».
+**Capture 3** : le flux de données au vert avec « 12 lignes ».
 
 Vérification SSMS : `SELECT * FROM D_Region;` (12 lignes, code_hapi NULL pour 11 et 12).
 
@@ -117,7 +117,7 @@ Mappages : `inform_classe_risque` -> `inform_classe`. Résultat attendu : **191 
 
 > À dire : les noms des pays viennent du fichier INFORM, utilisé comme **référentiel** ; il apporte aussi un score de risque par pays (attribut de la dimension).
 
-📸 **Capture 4**.
+**Capture 4**.
 
 ---
 
@@ -168,9 +168,9 @@ Mappages : `inform_classe_risque` -> `inform_classe`. Résultat attendu : **191 
 
 Résultat attendu : **35 022 lignes lues, 2 694 dans `Totaux`, 2 694 chargées**.
 
-📸 **Capture 5** : le flux de données complet au vert avec les nombres de lignes sur chaque flèche (c'est LA capture qui montre le nettoyage).
-📸 **Capture 6** : l'éditeur du fractionnement conditionnel.
-📸 **Capture 7** : l'éditeur du Lookup « Pays asile » (onglet Colonnes).
+**Capture 5** : le flux de données complet au vert avec les nombres de lignes sur chaque flèche (c'est LA capture qui montre le nettoyage).
+**Capture 6** : l'éditeur du fractionnement conditionnel.
+**Capture 7** : l'éditeur du Lookup « Pays asile » (onglet Colonnes).
 
 ---
 
@@ -187,7 +187,7 @@ Flux de contrôle : `Vider F_Conflits` (`TRUNCATE TABLE dbo.F_Conflits;`) puis l
 3. **Recherche** `Type evenement` : `SELECT type_key, code_type FROM dbo.D_TypeEvenement`, relier `event_type` -> `code_type`, cocher `type_key`.
 4. Destination `[dbo].[F_Conflits]` : date_key, type_key, **events -> nb_evenements**, nb_morts. Cocher **Conserver les valeurs NULL**.
 
-Résultat : **1 074 lignes**. 📸 **Capture 8** : l'éditeur de la colonne dérivée.
+Résultat : **1 074 lignes**. **Capture 8** : l'éditeur de la colonne dérivée.
 
 ---
 
@@ -219,7 +219,7 @@ Flux de contrôle : `Vider F_Pluie` (`TRUNCATE TABLE dbo.F_Pluie;`) puis flux de
 4. **Recherche** `Region` : `SELECT region_key, code_hapi FROM dbo.D_Region WHERE code_hapi IS NOT NULL`, relier `admin1_code` -> `code_hapi`, cocher `region_key`.
 5. Destination `[dbo].[F_Pluie]` : date_key, region_key, **provider_admin1_code -> code_zone**, **number_pixels -> nb_pixels**, pluie_x_pixels, moyenne_lt_x_pixels, est_provisoire.
 
-Résultat : **7 830 lignes lues, 2 610 décades chargées** (dont 45 provisoires). 📸 **Capture 9**.
+Résultat : **7 830 lignes lues, 2 610 décades chargées** (dont 45 provisoires). **Capture 9**.
 
 ---
 
@@ -253,7 +253,7 @@ Flux de contrôle : `Vider F_Indicateurs_Region` (`TRUNCATE TABLE dbo.F_Indicate
 8. **Recherche** `Milieu` : `SELECT milieu_key, milieu FROM dbo.D_Milieu`, relier `milieu`, cocher `milieu_key`.
 9. Destination `[dbo].[F_Indicateurs_Region]` : toutes les colonnes de la table (date_key, region_key, milieu_key, population_legale, population_marocaine, population_etrangere, nb_menages, population_10_ans_plus, nb_analphabetes_10_plus, population_15_ans_plus, **population_active_15_plus**, nb_chomeurs, nb_personnes_handicap).
 
-Résultat : **36 + 36 lignes lues, 36 fusionnées, 24 chargées**. 📸 **Capture 10** : le flux complet (2 sources, 2 tris, Merge Join).
+Résultat : **36 + 36 lignes lues, 36 fusionnées, 24 chargées**. **Capture 10** : le flux complet (2 sources, 2 tris, Merge Join).
 
 ---
 
@@ -270,7 +270,7 @@ Flux de contrôle : `Vider F_Pauvrete` (`TRUNCATE TABLE dbo.F_Pauvrete;`) puis f
 5. **Recherches** `Region` et `Milieu` (comme au 7).
 6. Destination `[dbo].[F_Pauvrete]` : date_key, region_key, milieu_key, indice_pauvrete_multidim, taux_pauvrete_pct, intensite_pauvrete_pct, taux_vulnerabilite_pct.
 
-Résultat : **24 + 24 + 24 = 72 lignes**. 📸 **Capture 11**.
+Résultat : **24 + 24 + 24 = 72 lignes**. **Capture 11**.
 
 ---
 
@@ -282,13 +282,13 @@ Résultat : **24 + 24 + 24 = 72 lignes**. 📸 **Capture 11**.
    > Bonus à l'oral : les 5 packages de faits peuvent partir **en parallèle** (5 flèches depuis `02_D_Pays`) car ils sont indépendants entre eux ; seules les dimensions doivent être chargées avant.
 4. F5 : tout doit passer au vert.
 
-📸 **Capture 12** : le flux de contrôle du Master au vert.
+**Capture 12** : le flux de contrôle du Master au vert.
 
 ## 10. Vérification finale (5 min)
 
 Dans SSMS, ouvrir et exécuter `sql/03_controles.sql` : **toutes les lignes doivent avoir `ok = 1`**. Le taux de chômage recalculé doit être **21,3 %** (le chiffre officiel du HCP).
 
-📸 **Capture 13** : le résultat de `03_controles.sql`.
+**Capture 13** : le résultat de `03_controles.sql`.
 
 Puis : fermer Visual Studio, `git add ssis` / `git commit -m "ssis: 8 packages, DW chargé et contrôlé"` / `git push`.
 

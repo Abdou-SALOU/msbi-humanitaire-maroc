@@ -11,7 +11,7 @@ Tableau Desktop > Se connecter > À un serveur > **Microsoft Analysis Services**
 - Si Tableau demande un pilote : installer le **fournisseur OLE DB Microsoft Analysis Services** depuis la page des pilotes de Tableau (lien proposé par le message d'erreur).
 - Les mesures calculées du cube (Taux de chômage, Pluie moyenne...) apparaissent comme des mesures normales : **ne pas les recalculer dans Tableau**.
 
-📸 **Capture T1** : l'écran de connexion avec le cube sélectionné.
+**Capture T1** : l'écran de connexion avec le cube sélectionné.
 
 > À dire : Tableau ne lit pas les tables, il envoie des **requêtes MDX** au cube. Les calculs (taux, moyennes pondérées) sont faits une seule fois dans le cube, et tous les tableaux de bord affichent les mêmes chiffres.
 
@@ -77,4 +77,4 @@ Un tableau de bord d'une page avec les 4 chiffres clés et un graphique par thè
 
 Chacun travaille dans son classeur (`tableau/abdou.twb`, `tableau/essorong.twb`). À la fin : ouvrir un classeur, copier les feuilles de l'autre (clic droit > Copier / Coller), puis **Fichier > Enregistrer sous > `tableau/final.twbx`** (format empaqueté).
 
-📸 **Captures T2 à T6** : chaque tableau de bord en plein écran.
+**Captures T2 à T6** : chaque tableau de bord en plein écran.

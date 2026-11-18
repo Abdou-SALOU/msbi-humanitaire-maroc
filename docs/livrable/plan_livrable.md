@@ -35,7 +35,7 @@ Préparation des Excel (une phrase) : les Excel du HCP sont des tableaux de publ
   - **dimension à deux rôles** : D_Pays sert de pays d'origine et de pays d'asile ;
   - **mesures additives** : les taux du HCP sont convertis en effectifs (chômeurs, analphabètes), la pluie est stockée en « pluie x pixels », pour que les totaux soient justes à tout niveau ;
   - **dimension Date** générée par script (1997-2026, avec la décade du mois).
-- 📸 script `sql/01_creer_dw.sql` dans SSMS, et la liste des 11 tables.
+- script `sql/01_creer_dw.sql` dans SSMS, et la liste des 11 tables.
 
 ## 4. ETL avec SSIS (4 à 5 pages) - captures 1 à 13 du guide SSIS
 
@@ -73,7 +73,7 @@ Principaux enseignements chiffrés (3 ou 4), difficultés rencontrées et soluti
 
 ### Rappels de forme
 
-- Rédaction au « nous » (binôme), phrases simples, aucune mention d'outil d'aide à la rédaction.
+- Rédaction au « nous » (binôme), phrases simples.
 - Pas de paragraphe sur les versions des logiciels.
 - Une capture = un numéro + un titre + un commentaire. Recadrer les captures sur la partie utile.
 - Taille finale < 20 Mo (captures en PNG compressées si besoin).

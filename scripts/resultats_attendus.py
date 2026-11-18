@@ -102,6 +102,6 @@ table(t, 0)
 (R / "docs").mkdir(exist_ok=True)
 (R / "docs" / "resultats_attendus.md").write_text(
     "# Résultats attendus (calculés depuis les fichiers sources)\n\n"
-    "Généré par `scripts/resultats_attendus.py`. Si le DW ou le cube donne autre chose, "
+    "Calculé par `scripts/resultats_attendus.py`. Si le DW ou le cube donne autre chose, "
     "un package SSIS ou une mesure du cube est à revoir.\n" + "".join(out), encoding="utf-8")
 print("docs/resultats_attendus.md écrit")
