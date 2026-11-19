@@ -1,0 +1,494 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/18/2026 7:37:24 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DELL-14-PLUS"
+  DTS:CreatorName="DELL-14-PLUS\pc"
+  DTS:DTSID="{FED5C150-981C-482B-96E3-333207991E46}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{C69C16C0-28C0-43C2-8DE5-3085485A913A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV regions]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4A6085F2-8F8A-4BED-8728-1FC00E1201CE}"
+      DTS:ObjectName="CSV regions">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Parcours_Universitaire\Cours\3A_S1_2026-2027\ETL et Data Warehousing\Projet_MSBI\data\prepare\regions.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="17"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code_hcp"
+              DTS:DTSID="{5B9BF052-6E47-43B4-B24C-AC48E3DD1BDB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="60"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nom_region"
+              DTS:DTSID="{E07513CC-9487-4202-B801-EA26E35164CA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code_hapi"
+              DTS:DTSID="{E4E129BF-C811-47CD-A6CC-F827D2316135}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="60"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nom_hapi"
+              DTS:DTSID="{207D1A0D-AA12-41F9-AEBC-2EBFA1C76CAE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Charger D_Region"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{2692D3F5-D184-472C-863F-BC4FB6EAD30E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Charger D_Region"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Charger D_Region\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[D_Region]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Charger D_Region\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{B1CE8458-06A8-4D87-A3C9-A22D5FAE8311}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Connexion de données]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[code_hcp]"
+                      cachedDataType="ui1"
+                      cachedName="code_hcp"
+                      externalMetadataColumnId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_hcp]"
+                      lineageId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[code_hcp]" />
+                    <inputColumn
+                      refId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[nom_region]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="nom_region"
+                      externalMetadataColumnId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_region]"
+                      lineageId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[nom_region]" />
+                    <inputColumn
+                      refId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[code_hapi]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="code_hapi"
+                      externalMetadataColumnId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_hapi]"
+                      lineageId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[code_hapi]" />
+                    <inputColumn
+                      refId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[nom_hapi]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="nom_hapi"
+                      externalMetadataColumnId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_hapi]"
+                      lineageId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[nom_hapi]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[region_key]"
+                      dataType="i4"
+                      name="region_key" />
+                    <externalMetadataColumn
+                      refId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_hcp]"
+                      dataType="ui1"
+                      name="code_hcp" />
+                    <externalMetadataColumn
+                      refId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_hapi]"
+                      dataType="wstr"
+                      length="5"
+                      name="code_hapi" />
+                    <externalMetadataColumn
+                      refId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_region]"
+                      dataType="wstr"
+                      length="60"
+                      name="nom_region" />
+                    <externalMetadataColumn
+                      refId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_hapi]"
+                      dataType="wstr"
+                      length="60"
+                      name="nom_hapi" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger D_Region\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger D_Region\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger D_Region\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger D_Region\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger D_Region\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger D_Region\Source du fichier plat"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1033"
+              name="Source du fichier plat"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Charger D_Region\Source du fichier plat.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV regions]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV regions]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[code_hcp]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[code_hcp]"
+                      lineageId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[code_hcp]"
+                      name="code_hcp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[nom_region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[nom_region]"
+                      length="60"
+                      lineageId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[nom_region]"
+                      name="nom_region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[code_hapi]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[code_hapi]"
+                      length="5"
+                      lineageId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[code_hapi]"
+                      name="code_hapi"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[nom_hapi]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[nom_hapi]"
+                      length="60"
+                      lineageId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[nom_hapi]"
+                      name="nom_hapi"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[code_hcp]"
+                      dataType="ui1"
+                      name="code_hcp" />
+                    <externalMetadataColumn
+                      refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[nom_region]"
+                      dataType="wstr"
+                      length="60"
+                      name="nom_region" />
+                    <externalMetadataColumn
+                      refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[code_hapi]"
+                      dataType="wstr"
+                      length="5"
+                      name="code_hapi" />
+                    <externalMetadataColumn
+                      refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[nom_hapi]"
+                      dataType="wstr"
+                      length="60"
+                      name="nom_hapi" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Charger D_Region.Paths[Sortie de source de fichier plat]"
+              endId="Package\Charger D_Region\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source de fichier plat"
+              startId="Package\Charger D_Region\Source du fichier plat.Outputs[Sortie de source de fichier plat]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="165.333333333334,42.6666666666667"
+          Id="Package\Charger D_Region"
+          TopLeft="383.749982845039,23.3999988842011" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Charger D_Region">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Charger D_Region\Source du fichier plat"
+          TopLeft="319.999985694886,12.9999993801117" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Charger D_Region\Destination OLE DB"
+          TopLeft="324.999985471368,91.6499956297876" />
+        <EdgeLayout
+          Id="Package\Charger D_Region.Paths[Sortie de source de fichier plat]"
+          TopLeft="410.499985583127,55.6666660467784">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.9833295830092"
+              Start="0,0"
+              End="0,28.4833295830092">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4833295830092" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Charger D_Region\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
