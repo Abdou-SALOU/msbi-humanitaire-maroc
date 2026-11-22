@@ -11,8 +11,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{8C218687-DC19-4331-9293-58BF26E0DDB2}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{8E26759E-51E7-49F8-9045-FCAA4E314385}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1014,6 +1014,13 @@ where [refTable].[code_type] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Oui"
+          ParentId="Package\Charger F_Conflits"
+          FontInfo="{assembly:Null}"
+          Size="48,60"
+          Id="6db9c938-54af-4124-baf6-d0bd465e31b8"
+          TopLeft="5.5,5.5" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>

@@ -24,7 +24,7 @@ Les noms des menus sont en français, avec le nom anglais entre parenthèses si 
 | `05_F_Pluie` | F_Pluie (2 610) | Filtre, calculs, booléen |
 | `06_F_Indicateurs_Region` | F_Indicateurs_Region (24) | **Tri + Merge Join** (fusion de 2 fichiers HCP), conversion taux -> effectifs |
 | `07_F_Pauvrete` | F_Pauvrete (72) | **Union All** (fusion de 3 fichiers) |
-| `00_Master` | tout | Exécuter SQL + Exécuter package (orchestration) |
+| `00_Master` | tout | Tâche d'exécution de requêtes SQL + Tâche d'exécution de package (orchestration) |
 
 ---
 
@@ -238,7 +238,7 @@ Flux de contrôle : `Vider F_Indicateurs_Region` (`TRUNCATE TABLE dbo.F_Indicate
 
 2. **Source 2** : `data\prepare\hcp_population_legale_2024.csv` (point-virgule) : code_hcp DT_UI1, milieu DT_WSTR 10, population_marocaine / population_etrangere / nb_menages DT_I4.
    > Ce sont **deux fichiers différents du HCP** (le fichier des indicateurs et celui de la population légale). On les fusionne ligne à ligne sur (région, milieu).
-3. Sous chaque source : une transformation **Tri** (*Sort*) sur `code_hcp` puis `milieu` (ordre croissant).
+3. Sous chaque source : une transformation **Trier** (*Sort*) sur `code_hcp` puis `milieu` (ordre croissant).
    > Pourquoi : la **Jointure de fusion** (*Merge Join*) exige deux entrées triées sur la clé de jointure, comme une fusion de deux listes triées.
 4. **Jointure de fusion** : entrée gauche = tri de la source 1, entrée droite = tri de la source 2. Type **Jointure interne**, clés `code_hcp` + `milieu`. Cocher toutes les colonnes de gauche + population_marocaine, population_etrangere, nb_menages de droite.
 5. **Fractionnement conditionnel** `Urbain et rural` : sortie `Urbain_Rural` = `milieu != "Ensemble"`, défaut `Ensemble_ignore`.

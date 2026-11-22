@@ -1,0 +1,1431 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/22/2026 11:01:43 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-F0M61LO"
+  DTS:CreatorName="DESKTOP-F0M61LO\pc"
+  DTS:DTSID="{F7172F08-B6DB-459D-8C16-67A1DD142BC8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="05_F_Pluie"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{2D08B775-0698-4F43-9DD7-7CAA5F18FC66}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV pluie]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{20B5528E-B487-46A6-A37B-F5D938AA65AE}"
+      DTS:ObjectName="CSV pluie">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Parcours_Universitaire\Cours\3A_S1_2026-2027\ETL et Data Warehousing\Projet_MSBI\data\hapi\hdx_hapi_rainfall_mar.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="location_code"
+              DTS:DTSID="{3707A6FA-961C-4175-85C9-682BFAE5549A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="has_hrp"
+              DTS:DTSID="{0D512D0E-E6DE-4B63-8260-8929AC05D9E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="in_gho"
+              DTS:DTSID="{5F64C674-3284-43C8-8315-377413DF834E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="provider_admin1_name"
+              DTS:DTSID="{16F2B76A-2832-4B5F-8D8B-122E1B8D0F2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="provider_admin2_name"
+              DTS:DTSID="{66D610C0-3AA5-4572-9965-C8BC99D1C209}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="admin1_code"
+              DTS:DTSID="{C2C0C55A-099A-4C5F-B870-77A38451ED18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="admin1_name"
+              DTS:DTSID="{F5C11E28-2366-462F-9DED-E1DDD74DFBE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="admin2_code"
+              DTS:DTSID="{424FC6D2-6F5A-439E-824D-C308EA39C476}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="admin2_name"
+              DTS:DTSID="{F3D47AB6-7F91-4B07-BD3F-8BA55664ADD0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="admin_level"
+              DTS:DTSID="{D85D89E5-2F8F-446F-ABE8-72E5C204D4B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="provider_admin1_code"
+              DTS:DTSID="{B8EAACDB-27C0-4726-B9B5-19747C5A6095}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="provider_admin2_code"
+              DTS:DTSID="{22FEBA3E-1E88-46A0-8CDD-BFC25BBBC8BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="aggregation_period"
+              DTS:DTSID="{9A841B00-B75D-4553-A57C-5D228C27D647}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="rainfall"
+              DTS:DTSID="{F011DA4B-3AF5-4A08-8B33-2B16F85C357D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="rainfall_long_term_average"
+              DTS:DTSID="{118A3A7C-3359-485A-B778-84E791393EC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="rainfall_anomaly_pct"
+              DTS:DTSID="{C96B3FF5-228B-4ADF-B7D0-ACA19A56C83C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="number_pixels"
+              DTS:DTSID="{0D7ACAFC-607A-4714-8BFE-08706F305075}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="version"
+              DTS:DTSID="{5BDB1C15-3DC4-4DED-9507-96B000E0D735}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="reference_period_start"
+              DTS:DTSID="{7DF6C9E4-0228-4B0F-AFB9-397B10B0DE5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="reference_period_end"
+              DTS:DTSID="{6B88E8CC-27C6-4B46-A0C8-3C35304E2C28}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Charger F_Pluie"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{AFFBCB40-7104-468A-8FF9-FE3C8F5CC9C5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Charger F_Pluie"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Charger F_Pluie\Calculs"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Calculs"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pluie\Calculs.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\Calculs.Inputs[Entrée de colonne dérivée].Columns[rainfall]"
+                      cachedDataType="r8"
+                      cachedName="rainfall"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[rainfall]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\Calculs.Inputs[Entrée de colonne dérivée].Columns[rainfall_long_term_average]"
+                      cachedDataType="r8"
+                      cachedName="rainfall_long_term_average"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[rainfall_long_term_average]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\Calculs.Inputs[Entrée de colonne dérivée].Columns[number_pixels]"
+                      cachedDataType="i4"
+                      cachedName="number_pixels"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[number_pixels]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\Calculs.Inputs[Entrée de colonne dérivée].Columns[version]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="version"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[version]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\Calculs.Inputs[Entrée de colonne dérivée].Columns[reference_period_start]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="reference_period_start"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[reference_period_start]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Charger F_Pluie\Calculs.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[date_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[date_key]"
+                      name="date_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_I4)[REPLACE](#{Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[reference_period_start]},"-","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)REPLACE(reference_period_start,"-","")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[pluie_x_pixels]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[pluie_x_pixels]"
+                      name="pluie_x_pixels"
+                      precision="18"
+                      scale="4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_NUMERIC,18,4)(#{Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[rainfall]} * #{Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[number_pixels]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,18,4)(rainfall * number_pixels)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[moyenne_lt_x_pixels]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[moyenne_lt_x_pixels]"
+                      name="moyenne_lt_x_pixels"
+                      precision="18"
+                      scale="4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_NUMERIC,18,4)(#{Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[rainfall_long_term_average]} * #{Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[number_pixels]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,18,4)(rainfall_long_term_average * number_pixels)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[est_provisoire]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[est_provisoire]"
+                      name="est_provisoire"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[version]} == "preliminary"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">version == "preliminary"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pluie\Calculs.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Charger F_Pluie\Calculs.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Calculs.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pluie\Calculs.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Calculs.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pluie\Calculs.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pluie\F_Pluie"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="F_Pluie"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[F_Pluie]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Charger F_Pluie\F_Pluie.Connections[OleDbConnection]"
+                  connectionManagerID="{B1CE8458-06A8-4D87-A3C9-A22D5FAE8311}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Connexion de données]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].Columns[date_key]"
+                      cachedDataType="i4"
+                      cachedName="date_key"
+                      externalMetadataColumnId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[date_key]"
+                      lineageId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[date_key]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].Columns[pluie_x_pixels]"
+                      cachedDataType="numeric"
+                      cachedName="pluie_x_pixels"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[pluie_x_pixels]"
+                      lineageId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[pluie_x_pixels]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].Columns[moyenne_lt_x_pixels]"
+                      cachedDataType="numeric"
+                      cachedName="moyenne_lt_x_pixels"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[moyenne_lt_x_pixels]"
+                      lineageId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[moyenne_lt_x_pixels]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].Columns[est_provisoire]"
+                      cachedDataType="bool"
+                      cachedName="est_provisoire"
+                      externalMetadataColumnId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[est_provisoire]"
+                      lineageId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée].Columns[est_provisoire]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].Columns[region_key]"
+                      cachedDataType="i4"
+                      cachedName="region_key"
+                      externalMetadataColumnId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[region_key]"
+                      lineageId="Package\Charger F_Pluie\Region.Outputs[Sortie de recherche avec correspondance].Columns[region_key]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].Columns[provider_admin1_code]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="provider_admin1_code"
+                      externalMetadataColumnId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[code_zone]"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[provider_admin1_code]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].Columns[number_pixels]"
+                      cachedDataType="i4"
+                      cachedName="number_pixels"
+                      externalMetadataColumnId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[nb_pixels]"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[number_pixels]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[date_key]"
+                      dataType="i4"
+                      name="date_key" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[region_key]"
+                      dataType="i4"
+                      name="region_key" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[code_zone]"
+                      dataType="wstr"
+                      length="10"
+                      name="code_zone" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[nb_pixels]"
+                      dataType="i4"
+                      name="nb_pixels" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[pluie_x_pixels]"
+                      dataType="numeric"
+                      name="pluie_x_pixels"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[moyenne_lt_x_pixels]"
+                      dataType="numeric"
+                      name="moyenne_lt_x_pixels"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB].ExternalColumns[est_provisoire]"
+                      dataType="bool"
+                      name="est_provisoire" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pluie\F_Pluie.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pluie\F_Pluie.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\F_Pluie.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pluie\F_Pluie.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pluie\Garder les decades"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Fractionnement conditionnel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Achemine des lignes de données vers différentes sorties, selon le contexte des données. Utilisez des conditions (expressions SSIS) pour spécifier les lignes qui seront acheminées. Par exemple, séparez les enregistrements qui doivent être nettoyés de ceux qui sont prêts à être chargés ou acheminez uniquement un sous-ensemble d'enregistrements."
+              name="Garder les decades"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pluie\Garder les decades.Inputs[Entrée de fractionnement conditionnel]"
+                  description="Entrée vers la transformation de fractionnement conditionnel"
+                  name="Entrée de fractionnement conditionnel">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\Garder les decades.Inputs[Entrée de fractionnement conditionnel].Columns[aggregation_period]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="aggregation_period"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[aggregation_period]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pluie\Garder les decades.Outputs[Decades]"
+                  description="Sortie 1 de la transformation de fractionnement conditionnel"
+                  errorOrTruncationOperation="Calcul"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Decades"
+                  synchronousInputId="Package\Charger F_Pluie\Garder les decades.Inputs[Entrée de fractionnement conditionnel]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie l'expression. Cette version d'expression utilise les identificateurs de traçabilité à la place des noms de colonnes."
+                      name="Expression">#{Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[aggregation_period]} == "dekad"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie la version claire de l'expression. Cette version d'expression utilise les noms de colonnes."
+                      expressionType="Notify"
+                      name="FriendlyExpression">aggregation_period == "dekad"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Spécifie la position de la condition dans la liste des conditions que la transformation évalue. L'ordre d'évaluation se fait par ordre croissant de valeur."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pluie\Garder les decades.Outputs[Autres_periodes]"
+                  description="Sortie par défaut de la transformation de fractionnement conditionnel"
+                  exclusionGroup="1"
+                  name="Autres_periodes"
+                  synchronousInputId="Package\Charger F_Pluie\Garder les decades.Inputs[Entrée de fractionnement conditionnel]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pluie\Garder les decades.Outputs[Sortie d'erreur de fractionnement conditionnel]"
+                  description="Sortie d'erreur de la transformation de fractionnement conditionnel"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de fractionnement conditionnel"
+                  synchronousInputId="Package\Charger F_Pluie\Garder les decades.Inputs[Entrée de fractionnement conditionnel]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Garder les decades.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pluie\Garder les decades.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Garder les decades.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pluie\Garder les decades.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pluie\Region"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Region"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT region_key, code_hapi FROM dbo.D_Region WHERE code_hapi IS NOT NULL</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT region_key, code_hapi FROM dbo.D_Region WHERE code_hapi IS NOT NULL) [refTable]
+where [refTable].[code_hapi] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="region_key" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_hapi" dataType="DT_WSTR" length="5" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[admin1_code]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Charger F_Pluie\Region.Connections[OleDbConnection]"
+                  connectionManagerID="{B1CE8458-06A8-4D87-A3C9-A22D5FAE8311}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Connexion de données]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pluie\Region.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger F_Pluie\Region.Inputs[Entrée de recherche].Columns[admin1_code]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="admin1_code"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[admin1_code]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">code_hapi</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pluie\Region.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Charger F_Pluie\Region.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Region.Outputs[Sortie de recherche avec correspondance].Columns[region_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Charger F_Pluie\Region.Outputs[Sortie de recherche avec correspondance].Columns[region_key]"
+                      name="region_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">region_key</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pluie\Region.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Charger F_Pluie\Region.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pluie\Region.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Charger F_Pluie\Region.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Region.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pluie\Region.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Region.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pluie\Region.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pluie\Source du fichier plat"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1033"
+              name="Source du fichier plat"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Charger F_Pluie\Source du fichier plat.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV pluie]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV pluie]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[provider_admin1_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[provider_admin1_code]"
+                      length="10"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[provider_admin1_code]"
+                      name="provider_admin1_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[aggregation_period]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[aggregation_period]"
+                      length="10"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[aggregation_period]"
+                      name="aggregation_period"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[rainfall]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[rainfall]"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[rainfall]"
+                      name="rainfall"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[rainfall_long_term_average]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[rainfall_long_term_average]"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[rainfall_long_term_average]"
+                      name="rainfall_long_term_average"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[number_pixels]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[number_pixels]"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[number_pixels]"
+                      name="number_pixels"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[version]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[version]"
+                      length="15"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[version]"
+                      name="version"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[reference_period_start]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[reference_period_start]"
+                      length="10"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[reference_period_start]"
+                      name="reference_period_start"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[admin1_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[admin1_code]"
+                      length="5"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[admin1_code]"
+                      name="admin1_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[location_code]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="location_code" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[has_hrp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="has_hrp" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[in_gho]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="in_gho" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[provider_admin1_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="provider_admin1_name" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[provider_admin2_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="provider_admin2_name" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[admin1_code]"
+                      dataType="wstr"
+                      length="5"
+                      name="admin1_code" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[admin1_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="admin1_name" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[admin2_code]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="admin2_code" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[admin2_name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="admin2_name" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[admin_level]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="admin_level" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[provider_admin1_code]"
+                      dataType="wstr"
+                      length="10"
+                      name="provider_admin1_code" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[provider_admin2_code]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="provider_admin2_code" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[aggregation_period]"
+                      dataType="wstr"
+                      length="10"
+                      name="aggregation_period" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[rainfall]"
+                      dataType="r8"
+                      name="rainfall" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[rainfall_long_term_average]"
+                      dataType="r8"
+                      name="rainfall_long_term_average" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[rainfall_anomaly_pct]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="rainfall_anomaly_pct" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[number_pixels]"
+                      dataType="i4"
+                      name="number_pixels" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[version]"
+                      dataType="wstr"
+                      length="15"
+                      name="version" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[reference_period_start]"
+                      dataType="wstr"
+                      length="10"
+                      name="reference_period_start" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[reference_period_end]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="reference_period_end" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Charger F_Pluie.Paths[Decades]"
+              endId="Package\Charger F_Pluie\Calculs.Inputs[Entrée de colonne dérivée]"
+              name="Decades"
+              startId="Package\Charger F_Pluie\Garder les decades.Outputs[Decades]" />
+            <path
+              refId="Package\Charger F_Pluie.Paths[Sortie de colonne dérivée]"
+              endId="Package\Charger F_Pluie\Region.Inputs[Entrée de recherche]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Charger F_Pluie\Calculs.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Charger F_Pluie.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\Charger F_Pluie\F_Pluie.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Charger F_Pluie\Region.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Charger F_Pluie.Paths[Sortie de source de fichier plat]"
+              endId="Package\Charger F_Pluie\Garder les decades.Inputs[Entrée de fractionnement conditionnel]"
+              name="Sortie de source de fichier plat"
+              startId="Package\Charger F_Pluie\Source du fichier plat.Outputs[Sortie de source de fichier plat]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Vider F_Pluie"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{19EB09AE-65AE-44CD-9D9A-99F7A9C0CF63}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Vider F_Pluie"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B1CE8458-06A8-4D87-A3C9-A22D5FAE8311}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.F_Pluie;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{D409657F-8777-4103-9892-181D675A8DC4}"
+      DTS:From="Package\Vider F_Pluie"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Charger F_Pluie" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="141.333333333334,42.6666666666667"
+          Id="Package\Vider F_Pluie"
+          TopLeft="224.431808148934,8.2727268782529" />
+        <NodeLayout
+          Size="153.333333333334,42.6666666666667"
+          Id="Package\Charger F_Pluie"
+          TopLeft="214.204535878857,83.3181778452615" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="292.984838680562,50.9393935449196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.3787843003419"
+              Start="0,0"
+              End="0,24.8787843003419">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.8787843003419" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Charger F_Pluie">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Charger F_Pluie\Source du fichier plat"
+          TopLeft="479.999985694886,28.9999991357327" />
+        <NodeLayout
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Charger F_Pluie\Garder les decades"
+          TopLeft="486.999985486269,109.999996721745" />
+        <EdgeLayout
+          Id="Package\Charger F_Pluie.Paths[Sortie de source de fichier plat]"
+          TopLeft="570.833318923911,71.6666658023994">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.3333309193453"
+              Start="0,0"
+              End="0,30.8333309193453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.8333309193453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112,42.6666666666667"
+          Id="Package\Charger F_Pluie\Calculs"
+          TopLeft="519.499984681607,203.49999409914" />
+        <EdgeLayout
+          Id="Package\Charger F_Pluie.Paths[Decades]"
+          TopLeft="573.583318417271,152.666663388411">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.833330710729"
+              Start="0,0"
+              End="0,43.333330710729">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.333330710729" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-19.112578125,16.7921536366145,38.22515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112,42.6666666666667"
+          Id="Package\Charger F_Pluie\Region"
+          TopLeft="517.999984562397,281.999991595745" />
+        <EdgeLayout
+          Id="Package\Charger F_Pluie.Paths[Sortie de colonne dérivée]"
+          TopLeft="574.749984622002,246.166660765807">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.8333308299384"
+              Start="0,0"
+              End="0,28.3333308299384">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.3333308299384" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="113.333333333334,42.6666666666667"
+          Id="Package\Charger F_Pluie\F_Pluie"
+          TopLeft="518.999984532595,367.999989032746" />
+        <EdgeLayout
+          Id="Package\Charger F_Pluie.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="574.83331788083,324.666658262412">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.3333307703336"
+              Start="0,0"
+              End="0,35.8333307703336">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.8333307703336" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,12.1119778851668,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Charger F_Pluie\Region">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Charger F_Pluie\F_Pluie">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
