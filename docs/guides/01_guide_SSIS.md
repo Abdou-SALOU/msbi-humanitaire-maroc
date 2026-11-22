@@ -264,7 +264,7 @@ Flux de contrôle : `Vider F_Pauvrete` (`TRUNCATE TABLE dbo.F_Pauvrete;`) puis f
 1. **Trois sources** fichier plat : `hcp_pauvrete_ensemble.csv`, `hcp_pauvrete_urbain.csv`, `hcp_pauvrete_rural.csv` (point-virgule, 3 gestionnaires de connexions). Avancé (identique pour les 3) : code_hcp DT_UI1, annee DT_I4, les 4 autres colonnes DT_R8.
 2. Sous chaque source, une **Colonne dérivée** qui ajoute `milieu` : `(DT_WSTR,10)"Ensemble"` (puis `"Urbain"`, puis `"Rural"`).
    > Pourquoi : le milieu n'est pas dans les fichiers, il est dans leur NOM (une feuille Excel par milieu). On l'ajoute avant de fusionner, sinon on ne saurait plus d'où vient chaque ligne.
-3. **Union totale** (*Union All*) : relier les 3 colonnes dérivées. Vérifier que les colonnes s'alignent.
+3. **Unir tout** (*Union All*) : relier les 3 colonnes dérivées. Vérifier que les colonnes s'alignent.
    > À dire : **Union All empile** des fichiers de même structure (on ajoute des lignes), alors que **Merge Join juxtapose** deux fichiers sur une clé (on ajoute des colonnes).
 4. **Colonne dérivée** `date_key` = `annee * 10000 + 101`.
 5. **Recherches** `Region` et `Milieu` (comme au 7).
@@ -278,7 +278,7 @@ Résultat : **24 + 24 + 24 = 72 lignes**. **Capture 11**.
 
 1. Nouveau package `00_Master.dtsx`.
 2. **Tâche d'exécution de requêtes SQL** `Vider les tables` : connexion `DW`, coller le contenu de `sql/04_vider_avant_chargement.sql`.
-3. **Tâche d'exécution de package** (*Execute Package Task*) pour chaque package : ReferenceType = **Référence de projet**, choisir le package. Les enchaîner avec des flèches vertes : `Vider` -> `01_D_Region` -> `02_D_Pays` -> les 5 packages de faits.
+3. **Tâche d'exécution de package** (*Execute Package Task*) pour chaque package : ReferenceType = **Référence du projet**, choisir le package. Les enchaîner avec des flèches vertes : `Vider` -> `01_D_Region` -> `02_D_Pays` -> les 5 packages de faits.
    > Bonus à l'oral : les 5 packages de faits peuvent partir **en parallèle** (5 flèches depuis `02_D_Pays`) car ils sont indépendants entre eux ; seules les dimensions doivent être chargées avant.
 4. F5 : tout doit passer au vert.
 

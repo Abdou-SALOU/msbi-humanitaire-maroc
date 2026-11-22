@@ -1,0 +1,2529 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/22/2026 1:45:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-F0M61LO"
+  DTS:CreatorName="DESKTOP-F0M61LO\pc"
+  DTS:DTSID="{02113709-10F3-4B38-A016-7D5E9FBA2922}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{5FF01462-ED29-4FF2-86F1-7B6BAB9C6E93}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV pauvrete ensemble]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F616FB85-AEC6-4D8B-83B8-C6D43FA04296}"
+      DTS:ObjectName="CSV pauvrete ensemble">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Parcours_Universitaire\Cours\3A_S1_2026-2027\ETL et Data Warehousing\Projet_MSBI\data\prepare\hcp_pauvrete_ensemble.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="17"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code_hcp"
+              DTS:DTSID="{28B0D5C3-91D1-49CD-B39A-9E903B0AB580}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="annee"
+              DTS:DTSID="{B4371801-1B99-4635-8799-C4AD4F0F6F30}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="indice_pauvrete_multidim"
+              DTS:DTSID="{68F66456-EEBF-47F3-8932-08C44C894972}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="taux_pauvrete_pct"
+              DTS:DTSID="{75DA62ED-2B5E-49CF-BC14-F11860848003}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="intensite_pauvrete_pct"
+              DTS:DTSID="{E13B6885-F528-4E38-8104-DAD6BBFB628C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="taux_vulnerabilite_pct"
+              DTS:DTSID="{1201FFD5-2D36-4EF6-8199-B5DE640F42DD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV pauvrete rural]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{ADDD7DAB-9CA3-419E-96C4-78362FE40C31}"
+      DTS:ObjectName="CSV pauvrete rural">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Parcours_Universitaire\Cours\3A_S1_2026-2027\ETL et Data Warehousing\Projet_MSBI\data\prepare\hcp_pauvrete_rural.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="17"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code_hcp"
+              DTS:DTSID="{F2581DB7-CADC-4D81-939E-51FBBDDBEA00}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="annee"
+              DTS:DTSID="{9573A89C-5DCB-495F-83DE-FC62B92DE8B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="indice_pauvrete_multidim"
+              DTS:DTSID="{74ACFEC7-0A96-441D-BCD4-3EDC97B0651D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="taux_pauvrete_pct"
+              DTS:DTSID="{85F96213-ADF0-42BD-9728-63CDFD371EF1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="intensite_pauvrete_pct"
+              DTS:DTSID="{E50E6F7A-DF16-4974-A5FD-6A98D03C15CA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="taux_vulnerabilite_pct"
+              DTS:DTSID="{A95E714D-E2E7-441D-B3AC-226AD08A65FB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV pauvrete urbain]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CDB962EA-55BE-4121-AAB1-8AEFD899EE49}"
+      DTS:ObjectName="CSV pauvrete urbain">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Parcours_Universitaire\Cours\3A_S1_2026-2027\ETL et Data Warehousing\Projet_MSBI\data\prepare\hcp_pauvrete_urbain.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="17"
+              DTS:TextQualified="True"
+              DTS:ObjectName="code_hcp"
+              DTS:DTSID="{CE71819A-DEF0-4AA4-B6F2-7286A9CB3CEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="annee"
+              DTS:DTSID="{B5335F07-3ACB-4C85-A66B-15FC3B30B229}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="indice_pauvrete_multidim"
+              DTS:DTSID="{C57D51BC-5400-492C-8218-95DEBC1662D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="taux_pauvrete_pct"
+              DTS:DTSID="{545CC71E-7929-49FA-8D1F-167E55780A35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="intensite_pauvrete_pct"
+              DTS:DTSID="{B469DE83-D0AF-4EE3-90EC-6998160D0D8F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="taux_vulnerabilite_pct"
+              DTS:DTSID="{975D72F1-8DE4-4C1C-A83B-B6C2FAAB627D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Charger F_Pauvrete"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{9E4A47DD-3970-4A9C-8002-79E26AB2E126}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Charger F_Pauvrete"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Charger F_Pauvrete\Ajout milieu ensemble"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Ajout milieu ensemble"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Outputs[Sortie de colonne dérivée].Columns[milieu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Outputs[Sortie de colonne dérivée].Columns[milieu]"
+                      name="milieu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_WSTR,10)"Ensemble"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,10)"Ensemble"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pauvrete\Ajout milieu rural"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Ajout milieu rural"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pauvrete\Ajout milieu rural.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pauvrete\Ajout milieu rural.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Charger F_Pauvrete\Ajout milieu rural.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Ajout milieu rural.Outputs[Sortie de colonne dérivée].Columns[milieu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu rural.Outputs[Sortie de colonne dérivée].Columns[milieu]"
+                      name="milieu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_WSTR,10)"Rural"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,10)"Rural"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pauvrete\Ajout milieu rural.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Charger F_Pauvrete\Ajout milieu rural.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Ajout milieu rural.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu rural.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Ajout milieu rural.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu rural.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pauvrete\Ajout milieu urbain"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Ajout milieu urbain"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pauvrete\Ajout milieu urbain.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pauvrete\Ajout milieu urbain.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Charger F_Pauvrete\Ajout milieu urbain.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Ajout milieu urbain.Outputs[Sortie de colonne dérivée].Columns[milieu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu urbain.Outputs[Sortie de colonne dérivée].Columns[milieu]"
+                      name="milieu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_WSTR,10)"Urbain"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,10)"Urbain"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pauvrete\Ajout milieu urbain.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Charger F_Pauvrete\Ajout milieu urbain.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Ajout milieu urbain.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu urbain.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Ajout milieu urbain.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu urbain.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pauvrete\Calcul date_key"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Calcul date_key"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pauvrete\Calcul date_key.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Calcul date_key.Inputs[Entrée de colonne dérivée].Columns[annee]"
+                      cachedDataType="i4"
+                      cachedName="annee"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[annee]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pauvrete\Calcul date_key.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Charger F_Pauvrete\Calcul date_key.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Calcul date_key.Outputs[Sortie de colonne dérivée].Columns[date_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Charger F_Pauvrete\Calcul date_key.Outputs[Sortie de colonne dérivée].Columns[date_key]"
+                      name="date_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[annee]} * 10000 + 101</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">annee * 10000 + 101</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pauvrete\Calcul date_key.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Charger F_Pauvrete\Calcul date_key.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Calcul date_key.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Calcul date_key.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Calcul date_key.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Calcul date_key.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pauvrete\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[F_Pauvrete]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Charger F_Pauvrete\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{B1CE8458-06A8-4D87-A3C9-A22D5FAE8311}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Connexion de données]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[indice_pauvrete_multidim]"
+                      cachedDataType="r8"
+                      cachedName="indice_pauvrete_multidim"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[indice_pauvrete_multidim]"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[indice_pauvrete_multidim]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[taux_pauvrete_pct]"
+                      cachedDataType="r8"
+                      cachedName="taux_pauvrete_pct"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[taux_pauvrete_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_pauvrete_pct]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[intensite_pauvrete_pct]"
+                      cachedDataType="r8"
+                      cachedName="intensite_pauvrete_pct"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[intensite_pauvrete_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[intensite_pauvrete_pct]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[taux_vulnerabilite_pct]"
+                      cachedDataType="r8"
+                      cachedName="taux_vulnerabilite_pct"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[taux_vulnerabilite_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_vulnerabilite_pct]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[date_key]"
+                      cachedDataType="i4"
+                      cachedName="date_key"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_key]"
+                      lineageId="Package\Charger F_Pauvrete\Calcul date_key.Outputs[Sortie de colonne dérivée].Columns[date_key]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[region_key]"
+                      cachedDataType="i4"
+                      cachedName="region_key"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[region_key]"
+                      lineageId="Package\Charger F_Pauvrete\Region.Outputs[Sortie de recherche avec correspondance].Columns[region_key]" />
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[milieu_key]"
+                      cachedDataType="ui1"
+                      cachedName="milieu_key"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[milieu_key]"
+                      lineageId="Package\Charger F_Pauvrete\Milieu.Outputs[Sortie de recherche avec correspondance].Columns[milieu_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_key]"
+                      dataType="i4"
+                      name="date_key" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[region_key]"
+                      dataType="i4"
+                      name="region_key" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[milieu_key]"
+                      dataType="ui1"
+                      name="milieu_key" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[indice_pauvrete_multidim]"
+                      dataType="numeric"
+                      name="indice_pauvrete_multidim"
+                      precision="9"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[taux_pauvrete_pct]"
+                      dataType="numeric"
+                      name="taux_pauvrete_pct"
+                      precision="9"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[intensite_pauvrete_pct]"
+                      dataType="numeric"
+                      name="intensite_pauvrete_pct"
+                      precision="9"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[taux_vulnerabilite_pct]"
+                      dataType="numeric"
+                      name="taux_vulnerabilite_pct"
+                      precision="9"
+                      scale="4" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pauvrete\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pauvrete\Empiler les 3 milieux"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unir tout;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Combine des lignes de plusieurs flux de données sans effectuer de tri. Par exemple, rajoutez des lignes à un flux de données après correction des erreurs. Si le tri est important, nous recommandons l'utilisation de la transformation de fusion."
+              name="Empiler les 3 milieux"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Unir tout entrée 1]"
+                  name="Unir tout entrée 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Unir tout entrée 1].Columns[code_hcp]"
+                      cachedDataType="ui1"
+                      cachedName="code_hcp"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[code_hcp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[code_hcp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Unir tout entrée 1].Columns[annee]"
+                      cachedDataType="i4"
+                      cachedName="annee"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[annee]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[annee]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Unir tout entrée 1].Columns[indice_pauvrete_multidim]"
+                      cachedDataType="r8"
+                      cachedName="indice_pauvrete_multidim"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[indice_pauvrete_multidim]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[indice_pauvrete_multidim]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Unir tout entrée 1].Columns[taux_pauvrete_pct]"
+                      cachedDataType="r8"
+                      cachedName="taux_pauvrete_pct"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[taux_pauvrete_pct]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_pauvrete_pct]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Unir tout entrée 1].Columns[intensite_pauvrete_pct]"
+                      cachedDataType="r8"
+                      cachedName="intensite_pauvrete_pct"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[intensite_pauvrete_pct]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[intensite_pauvrete_pct]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Unir tout entrée 1].Columns[taux_vulnerabilite_pct]"
+                      cachedDataType="r8"
+                      cachedName="taux_vulnerabilite_pct"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[taux_vulnerabilite_pct]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_vulnerabilite_pct]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Unir tout entrée 1].Columns[milieu]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="milieu"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Outputs[Sortie de colonne dérivée].Columns[milieu]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[milieu]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 1]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 1].Columns[code_hcp]"
+                      cachedDataType="ui1"
+                      cachedName="code_hcp"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[code_hcp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[code_hcp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 1].Columns[annee]"
+                      cachedDataType="i4"
+                      cachedName="annee"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[annee]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[annee]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 1].Columns[indice_pauvrete_multidim]"
+                      cachedDataType="r8"
+                      cachedName="indice_pauvrete_multidim"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[indice_pauvrete_multidim]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[indice_pauvrete_multidim]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 1].Columns[taux_pauvrete_pct]"
+                      cachedDataType="r8"
+                      cachedName="taux_pauvrete_pct"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[taux_pauvrete_pct]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_pauvrete_pct]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 1].Columns[intensite_pauvrete_pct]"
+                      cachedDataType="r8"
+                      cachedName="intensite_pauvrete_pct"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[intensite_pauvrete_pct]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[intensite_pauvrete_pct]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 1].Columns[taux_vulnerabilite_pct]"
+                      cachedDataType="r8"
+                      cachedName="taux_vulnerabilite_pct"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[taux_vulnerabilite_pct]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_vulnerabilite_pct]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 1].Columns[milieu]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="milieu"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu urbain.Outputs[Sortie de colonne dérivée].Columns[milieu]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[milieu]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 2]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 2].Columns[code_hcp]"
+                      cachedDataType="ui1"
+                      cachedName="code_hcp"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[code_hcp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[code_hcp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 2].Columns[annee]"
+                      cachedDataType="i4"
+                      cachedName="annee"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[annee]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[annee]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 2].Columns[indice_pauvrete_multidim]"
+                      cachedDataType="r8"
+                      cachedName="indice_pauvrete_multidim"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[indice_pauvrete_multidim]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[indice_pauvrete_multidim]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 2].Columns[taux_pauvrete_pct]"
+                      cachedDataType="r8"
+                      cachedName="taux_pauvrete_pct"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[taux_pauvrete_pct]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_pauvrete_pct]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 2].Columns[intensite_pauvrete_pct]"
+                      cachedDataType="r8"
+                      cachedName="intensite_pauvrete_pct"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[intensite_pauvrete_pct]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[intensite_pauvrete_pct]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 2].Columns[taux_vulnerabilite_pct]"
+                      cachedDataType="r8"
+                      cachedName="taux_vulnerabilite_pct"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[taux_vulnerabilite_pct]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_vulnerabilite_pct]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 2].Columns[milieu]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="milieu"
+                      lineageId="Package\Charger F_Pauvrete\Ajout milieu rural.Outputs[Sortie de colonne dérivée].Columns[milieu]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[milieu]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrée Union All 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1]"
+                  name="Unir tout sortie 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[code_hcp]"
+                      dataType="ui1"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[code_hcp]"
+                      name="code_hcp" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[annee]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[annee]"
+                      name="annee" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[indice_pauvrete_multidim]"
+                      dataType="r8"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[indice_pauvrete_multidim]"
+                      name="indice_pauvrete_multidim" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_pauvrete_pct]"
+                      dataType="r8"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_pauvrete_pct]"
+                      name="taux_pauvrete_pct" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[intensite_pauvrete_pct]"
+                      dataType="r8"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[intensite_pauvrete_pct]"
+                      name="intensite_pauvrete_pct" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_vulnerabilite_pct]"
+                      dataType="r8"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[taux_vulnerabilite_pct]"
+                      name="taux_vulnerabilite_pct" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[milieu]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[milieu]"
+                      name="milieu" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pauvrete\Milieu"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Milieu"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT milieu_key, milieu FROM dbo.D_Milieu</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT milieu_key, milieu FROM dbo.D_Milieu) [refTable]
+where [refTable].[milieu] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="milieu_key" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="milieu" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[milieu]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Charger F_Pauvrete\Milieu.Connections[OleDbConnection]"
+                  connectionManagerID="{B1CE8458-06A8-4D87-A3C9-A22D5FAE8311}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Connexion de données]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pauvrete\Milieu.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Milieu.Inputs[Entrée de recherche].Columns[milieu]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="milieu"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[milieu]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">milieu</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pauvrete\Milieu.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Charger F_Pauvrete\Milieu.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Milieu.Outputs[Sortie de recherche avec correspondance].Columns[milieu_key]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Charger F_Pauvrete\Milieu.Outputs[Sortie de recherche avec correspondance].Columns[milieu_key]"
+                      name="milieu_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">milieu_key</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pauvrete\Milieu.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Charger F_Pauvrete\Milieu.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pauvrete\Milieu.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Charger F_Pauvrete\Milieu.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Milieu.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Milieu.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Milieu.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Milieu.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pauvrete\Pauvreté ensemble"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1033"
+              name="Pauvreté ensemble"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV pauvrete ensemble]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV pauvrete ensemble]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[code_hcp]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[code_hcp]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[code_hcp]"
+                      name="code_hcp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[annee]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[annee]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[annee]"
+                      name="annee"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[indice_pauvrete_multidim]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[indice_pauvrete_multidim]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[indice_pauvrete_multidim]"
+                      name="indice_pauvrete_multidim"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[taux_pauvrete_pct]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_pauvrete_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[taux_pauvrete_pct]"
+                      name="taux_pauvrete_pct"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[intensite_pauvrete_pct]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[intensite_pauvrete_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[intensite_pauvrete_pct]"
+                      name="intensite_pauvrete_pct"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[taux_vulnerabilite_pct]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_vulnerabilite_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].Columns[taux_vulnerabilite_pct]"
+                      name="taux_vulnerabilite_pct"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[code_hcp]"
+                      dataType="ui1"
+                      name="code_hcp" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[annee]"
+                      dataType="i4"
+                      name="annee" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[indice_pauvrete_multidim]"
+                      dataType="r8"
+                      name="indice_pauvrete_multidim" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_pauvrete_pct]"
+                      dataType="r8"
+                      name="taux_pauvrete_pct" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[intensite_pauvrete_pct]"
+                      dataType="r8"
+                      name="intensite_pauvrete_pct" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_vulnerabilite_pct]"
+                      dataType="r8"
+                      name="taux_vulnerabilite_pct" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pauvrete\Pauvreté urbain"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1033"
+              name="Pauvreté urbain"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Charger F_Pauvrete\Pauvreté urbain.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV pauvrete urbain]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV pauvrete urbain]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[code_hcp]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[code_hcp]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[code_hcp]"
+                      name="code_hcp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[annee]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[annee]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[annee]"
+                      name="annee"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[indice_pauvrete_multidim]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[indice_pauvrete_multidim]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[indice_pauvrete_multidim]"
+                      name="indice_pauvrete_multidim"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[taux_pauvrete_pct]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_pauvrete_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[taux_pauvrete_pct]"
+                      name="taux_pauvrete_pct"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[intensite_pauvrete_pct]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[intensite_pauvrete_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[intensite_pauvrete_pct]"
+                      name="intensite_pauvrete_pct"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[taux_vulnerabilite_pct]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_vulnerabilite_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].Columns[taux_vulnerabilite_pct]"
+                      name="taux_vulnerabilite_pct"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[code_hcp]"
+                      dataType="ui1"
+                      name="code_hcp" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[annee]"
+                      dataType="i4"
+                      name="annee" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[indice_pauvrete_multidim]"
+                      dataType="r8"
+                      name="indice_pauvrete_multidim" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_pauvrete_pct]"
+                      dataType="r8"
+                      name="taux_pauvrete_pct" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[intensite_pauvrete_pct]"
+                      dataType="r8"
+                      name="intensite_pauvrete_pct" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_vulnerabilite_pct]"
+                      dataType="r8"
+                      name="taux_vulnerabilite_pct" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pauvrete\Region"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Region"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT region_key, code_hcp FROM dbo.D_Region</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT region_key, code_hcp FROM dbo.D_Region) [refTable]
+where [refTable].[code_hcp] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="region_key" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_hcp" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[code_hcp]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Charger F_Pauvrete\Region.Connections[OleDbConnection]"
+                  connectionManagerID="{B1CE8458-06A8-4D87-A3C9-A22D5FAE8311}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Connexion de données]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Charger F_Pauvrete\Region.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Charger F_Pauvrete\Region.Inputs[Entrée de recherche].Columns[code_hcp]"
+                      cachedDataType="ui1"
+                      cachedName="code_hcp"
+                      lineageId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1].Columns[code_hcp]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">code_hcp</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pauvrete\Region.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Charger F_Pauvrete\Region.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Region.Outputs[Sortie de recherche avec correspondance].Columns[region_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Charger F_Pauvrete\Region.Outputs[Sortie de recherche avec correspondance].Columns[region_key]"
+                      name="region_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">region_key</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pauvrete\Region.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Charger F_Pauvrete\Region.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Charger F_Pauvrete\Region.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Charger F_Pauvrete\Region.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Region.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Region.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Region.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Region.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Charger F_Pauvrete\Source du fichier plat"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1033"
+              name="Source du fichier plat"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Charger F_Pauvrete\Source du fichier plat.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CSV pauvrete rural]"
+                  connectionManagerRefId="Package.ConnectionManagers[CSV pauvrete rural]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[code_hcp]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[code_hcp]"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[code_hcp]"
+                      name="code_hcp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[annee]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[annee]"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[annee]"
+                      name="annee"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[indice_pauvrete_multidim]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[indice_pauvrete_multidim]"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[indice_pauvrete_multidim]"
+                      name="indice_pauvrete_multidim"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[taux_pauvrete_pct]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_pauvrete_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[taux_pauvrete_pct]"
+                      name="taux_pauvrete_pct"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[intensite_pauvrete_pct]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[intensite_pauvrete_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[intensite_pauvrete_pct]"
+                      name="intensite_pauvrete_pct"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[taux_vulnerabilite_pct]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_vulnerabilite_pct]"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[taux_vulnerabilite_pct]"
+                      name="taux_vulnerabilite_pct"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[code_hcp]"
+                      dataType="ui1"
+                      name="code_hcp" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[annee]"
+                      dataType="i4"
+                      name="annee" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[indice_pauvrete_multidim]"
+                      dataType="r8"
+                      name="indice_pauvrete_multidim" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_pauvrete_pct]"
+                      dataType="r8"
+                      name="taux_pauvrete_pct" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[intensite_pauvrete_pct]"
+                      dataType="r8"
+                      name="intensite_pauvrete_pct" />
+                    <externalMetadataColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[taux_vulnerabilite_pct]"
+                      dataType="r8"
+                      name="taux_vulnerabilite_pct" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Charger F_Pauvrete.Paths[Sortie de colonne dérivée]"
+              endId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Unir tout entrée 1]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Charger F_Pauvrete.Paths[Sortie de colonne dérivée1]"
+              endId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 1]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Charger F_Pauvrete\Ajout milieu urbain.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Charger F_Pauvrete.Paths[Sortie de colonne dérivée2]"
+              endId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Inputs[Entrée Union All 2]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Charger F_Pauvrete\Ajout milieu rural.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Charger F_Pauvrete.Paths[Sortie de colonne dérivée3]"
+              endId="Package\Charger F_Pauvrete\Region.Inputs[Entrée de recherche]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Charger F_Pauvrete\Calcul date_key.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Charger F_Pauvrete.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\Charger F_Pauvrete\Milieu.Inputs[Entrée de recherche]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Charger F_Pauvrete\Region.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Charger F_Pauvrete.Paths[Sortie de recherche avec correspondance1]"
+              endId="Package\Charger F_Pauvrete\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Charger F_Pauvrete\Milieu.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Charger F_Pauvrete.Paths[Sortie de source de fichier plat]"
+              endId="Package\Charger F_Pauvrete\Ajout milieu ensemble.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source de fichier plat"
+              startId="Package\Charger F_Pauvrete\Pauvreté ensemble.Outputs[Sortie de source de fichier plat]" />
+            <path
+              refId="Package\Charger F_Pauvrete.Paths[Sortie de source de fichier plat1]"
+              endId="Package\Charger F_Pauvrete\Ajout milieu urbain.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source de fichier plat"
+              startId="Package\Charger F_Pauvrete\Pauvreté urbain.Outputs[Sortie de source de fichier plat]" />
+            <path
+              refId="Package\Charger F_Pauvrete.Paths[Sortie de source de fichier plat2]"
+              endId="Package\Charger F_Pauvrete\Ajout milieu rural.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source de fichier plat"
+              startId="Package\Charger F_Pauvrete\Source du fichier plat.Outputs[Sortie de source de fichier plat]" />
+            <path
+              refId="Package\Charger F_Pauvrete.Paths[Unir tout sortie 1]"
+              endId="Package\Charger F_Pauvrete\Calcul date_key.Inputs[Entrée de colonne dérivée]"
+              name="Unir tout sortie 1"
+              startId="Package\Charger F_Pauvrete\Empiler les 3 milieux.Outputs[Unir tout sortie 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Vider F_Pauvrete"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{0526D33C-B078-4C18-AAA4-F3186DFADD28}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Vider F_Pauvrete"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B1CE8458-06A8-4D87-A3C9-A22D5FAE8311}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.F_Pauvrete;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{B55BD4AC-1CFE-4FF0-B945-3F3781343051}"
+      DTS:From="Package\Vider F_Pauvrete"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Charger F_Pauvrete" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\Vider F_Pauvrete"
+          TopLeft="239.999989271164,13.6499993491173" />
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Charger F_Pauvrete"
+          TopLeft="232.49998960644,85.7999959087374" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="319.583322772136,56.316666015784">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.4833298929534"
+              Start="0,0"
+              End="0,21.9833298929534">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9833298929534" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Charger F_Pauvrete">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Charger F_Pauvrete\Pauvreté ensemble"
+          TopLeft="59.9999973177908,22.0999989461899" />
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\Charger F_Pauvrete\Ajout milieu ensemble"
+          TopLeft="50.624997736886,109.199994792938" />
+        <EdgeLayout
+          Id="Package\Charger F_Pauvrete.Paths[Sortie de source de fichier plat]"
+          TopLeft="143.645830860672,64.7666656128566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.4333291800818"
+              Start="0,0"
+              End="0,36.9333291800818">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.9333291800818" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Charger F_Pauvrete\Pauvreté urbain"
+          TopLeft="276.874987622723,18.849999101162" />
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\Charger F_Pauvrete\Ajout milieu urbain"
+          TopLeft="267.499988041819,109.849994761944" />
+        <EdgeLayout
+          Id="Package\Charger F_Pauvrete.Paths[Sortie de source de fichier plat1]"
+          TopLeft="352.854154498938,61.5166657678287">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.3333289941154"
+              Start="0,0"
+              End="0,40.8333289941154">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.8333289941154" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Charger F_Pauvrete\Source du fichier plat"
+          TopLeft="471.249978933484,22.0999989461899" />
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\Charger F_Pauvrete\Ajout milieu rural"
+          TopLeft="486.874978234992,107.249994885922" />
+        <EdgeLayout
+          Id="Package\Charger F_Pauvrete.Paths[Sortie de source de fichier plat2]"
+          TopLeft="564.062478584238,64.7666656128566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.4833292730651"
+              Start="0,0"
+              End="0,34.9833292730651">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9833292730651" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Charger F_Pauvrete\Empiler les 3 milieux"
+          TopLeft="280.624987455085,198.899990515709" />
+        <EdgeLayout
+          Id="Package\Charger F_Pauvrete.Paths[Sortie de colonne dérivée]"
+          TopLeft="142.624997736886,151.866661459605">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="183.999989718199,47.0333290561043"
+              Start="0,0"
+              End="183.999989718199,39.5333290561043">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8875593801282" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.8875593801282"
+                    Point2="0,30.8875593801282"
+                    Point3="4,30.8875593801282" />
+                  <mssgle:LineSegment
+                    End="179.999989718199,30.8875593801282" />
+                  <mssgle:CubicBezierSegment
+                    Point1="179.999989718199,30.8875593801282"
+                    Point2="183.999989718199,30.8875593801282"
+                    Point3="183.999989718199,34.8875593801282" />
+                  <mssgle:LineSegment
+                    End="183.999989718199,39.5333290561043" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Charger F_Pauvrete.Paths[Sortie de colonne dérivée1]"
+          TopLeft="351.499988041819,152.516661428611">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.1249994132666,46.3833290870986"
+              Start="0,0"
+              End="17.1249994132666,38.8833290870986">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1916645435493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1916645435493"
+                    Point2="0,23.1916645435493"
+                    Point3="4,23.1916645435493" />
+                  <mssgle:LineSegment
+                    End="13.1249994132666,23.1916645435493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.1249994132666,23.1916645435493"
+                    Point2="17.1249994132666,23.1916645435493"
+                    Point3="17.1249994132666,27.1916645435493" />
+                  <mssgle:LineSegment
+                    End="17.1249994132666,38.8833290870986" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Charger F_Pauvrete.Paths[Sortie de colonne dérivée2]"
+          TopLeft="566.874978234992,149.916661552588">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-156.249990779907,48.983328963121"
+              Start="0,0"
+              End="-156.249990779907,41.483328963121">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1681563339899" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.1681563339899"
+                    Point2="0,32.1681563339899"
+                    Point3="-4,32.1681563339899" />
+                  <mssgle:LineSegment
+                    End="-152.249990779907,32.1681563339899" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-152.249990779907,32.1681563339899"
+                    Point2="-156.249990779907,32.1681563339899"
+                    Point3="-156.249990779907,36.1681563339899" />
+                  <mssgle:LineSegment
+                    End="-156.249990779907,41.483328963121" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="153.333333333334,42.6666666666667"
+          Id="Package\Charger F_Pauvrete\Calcul date_key"
+          TopLeft="287.499987147749,272.999986982346" />
+        <EdgeLayout
+          Id="Package\Charger F_Pauvrete.Paths[Unir tout sortie 1]"
+          TopLeft="366.39582063475,241.566657182376">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.4333297999699"
+              Start="0,0"
+              End="0,23.9333297999699">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9333297999699" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112,42.6666666666667"
+          Id="Package\Charger F_Pauvrete\Region"
+          TopLeft="305.468736344483,352.62498318553" />
+        <EdgeLayout
+          Id="Package\Charger F_Pauvrete.Paths[Sortie de colonne dérivée3]"
+          TopLeft="362.817695079449,315.666653649013">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.9583295365178"
+              Start="0,0"
+              End="0,29.4583295365178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.4583295365178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="106.666666666667,42.6666666666667"
+          Id="Package\Charger F_Pauvrete\Milieu"
+          TopLeft="302.343736484182,433.874979311228" />
+        <EdgeLayout
+          Id="Package\Charger F_Pauvrete.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="358.572903080999,395.291649852197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.5833294590313"
+              Start="0,0"
+              End="0,31.0833294590313">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.0833294590313" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,9.73697722951567,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Charger F_Pauvrete\Destination OLE DB"
+          TopLeft="274.218737741467,502.937476018072" />
+        <EdgeLayout
+          Id="Package\Charger F_Pauvrete.Paths[Sortie de recherche avec correspondance1]"
+          TopLeft="357.947903779491,476.541645977895">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.3958300401769"
+              Start="0,0"
+              End="0,18.8958300401769">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.8958300401769" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,3.64322752008846,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Charger F_Pauvrete\Region">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Charger F_Pauvrete\Milieu">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Charger F_Pauvrete\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
