@@ -1,0 +1,105 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="440b630b-95de-4429-bbaa-2e5d2b6dc12c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Humanitaire Maroc 1</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>F Conflits</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="d7eecd1e-833e-43c7-902c-55078595ceed">
+          <ID>F Conflits</ID>
+          <Name>F Conflits</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="8449368e-bef0-4491-a986-7bd12af4d4ad">
+            <DataSourceViewID>DW Humanitaire Maroc</DataSourceViewID>
+            <TableID>dbo_F_Conflits</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>F Pauvrete</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="7e42969d-2a74-4404-9cba-b64ab81a92f4">
+          <ID>F Pauvrete</ID>
+          <Name>F Pauvrete</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="4d1ef997-a1ba-4e11-8b7b-f514cc54ce46">
+            <DataSourceViewID>DW Humanitaire Maroc</DataSourceViewID>
+            <TableID>dbo_F_Pauvrete</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>F Indicateurs Region</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="b88668df-6728-436d-93d7-c6ab276db5a1">
+          <ID>F Indicateurs Region</ID>
+          <Name>F Indicateurs Region</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="9f7de3e3-b260-43c5-bf6a-d879aa555e30">
+            <DataSourceViewID>DW Humanitaire Maroc</DataSourceViewID>
+            <TableID>dbo_F_Indicateurs_Region</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>F Pluie</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="2db5b038-f8ed-44c6-831e-c6d2f879f58d">
+          <ID>F Pluie</ID>
+          <Name>F Pluie</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="fd79d3af-f8c3-4f8c-8ade-fe89c910a226">
+            <DataSourceViewID>DW Humanitaire Maroc</DataSourceViewID>
+            <TableID>dbo_F_Pluie</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>F Refugies</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="29ff1cbf-b784-48ab-886a-3a0f66b6b46d">
+          <ID>F Refugies</ID>
+          <Name>F Refugies</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="9f53e8e0-9a90-4d89-aaca-7768a31f856d">
+            <DataSourceViewID>DW Humanitaire Maroc</DataSourceViewID>
+            <TableID>dbo_F_Refugies</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>
