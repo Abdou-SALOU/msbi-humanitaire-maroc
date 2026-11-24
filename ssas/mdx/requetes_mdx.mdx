@@ -1,95 +1,190 @@
 /* =====================================================================
-   Requêtes MDX du projet - cube [Humanitaire Maroc]
-   À lancer dans SSMS : Connexion > Analysis Services > localhost >
-   base MSBI_Cube > Nouvelle requête MDX. Exécuter UNE requête à la fois
-   (la sélectionner puis F5).
-   Résultats attendus : docs/resultats_attendus.md (calculés depuis les CSV).
+   PROJET MSBI - HUMANITAIRE MAROC
+   Huit requetes MDX corrigees pour les hierarchies du cube deploye.
+
+   SSMS > Analysis Services > base MSBI_Cube > Nouvelle requete MDX.
+   Executer UNE requete a la fois (selectionner le SELECT complet,
+   ou le bloc WITH ... SELECT pour MDX 6, puis F5).
+
+   Requetes validees pas a pas sur le cube local : 1 a 8.
+   Source des valeurs de reference : docs/resultats_attendus.md.
+   IMPORTANT : ce fichier est un fichier de REQUETES, pas le script
+   de calcul du cube (ssas/calculs_cube.mdx).
    ===================================================================== */
 
--- MDX 1 - Personnes accueillies au Maroc, par année et par statut
--- Notions : axes COLUMNS/ROWS, plage de membres (:), découpage WHERE (slicer), NON EMPTY
--- Attendu : 2025 -> 15 033 demandeurs d'asile, 7 304 réfugiés
+-- =====================================================================
+-- MDX 1 - Personnes accueillies au Maroc par annee et statut (2019-2025)
+-- En 2025 : 15 033 demandeurs d'asile ; 7 304 refugies ; total 22 337.
+-- =====================================================================
 SELECT
-    NON EMPTY [Groupe Population].[Groupe Key].[Groupe Key].MEMBERS ON COLUMNS,
-    { [Date].[Annee].&[2019] : [Date].[Annee].&[2025] } ON ROWS
+    NON EMPTY
+        [Groupe Population].[Groupe Key].MEMBERS ON COLUMNS,
+    {
+        [Date].[Annee].&[2019] :
+        [Date].[Annee].&[2025]
+    } ON ROWS
 FROM [Humanitaire Maroc]
-WHERE ( [Measures].[Personnes], [Pays Asile].[Pays Key].[Morocco] );
+WHERE (
+    [Measures].[Personnes],
+    FILTER(
+        [Pays Asile].[Pays Key].MEMBERS,
+        [Pays Asile].[Pays Key].CURRENTMEMBER.NAME = "Morocco"
+    ).ITEM(0)
+);
 
 
--- MDX 2 - Top 5 des pays d'origine des personnes accueillies au Maroc en 2025
--- Notions : TOPCOUNT, dimension à deux rôles (Pays Origine / Pays Asile)
--- Attendu : Sudan 5 291, Syria 5 216, Guinea 2 366, Côte d'Ivoire 1 780, Senegal 1 584
+-- =====================================================================
+-- MDX 2 - Top 5 des pays d'origine des personnes accueillies au Maroc
+-- 2025 : Sudan 5291, Syria 5216, Guinea 2366, Cote d'Ivoire 1780,
+--        Senegal 1584.
+-- =====================================================================
 SELECT
     [Measures].[Personnes] ON COLUMNS,
-    TOPCOUNT([Pays Origine].[Pays Key].[Pays Key].MEMBERS, 5, [Measures].[Personnes]) ON ROWS
+    TOPCOUNT(
+        [Pays Origine].[Pays Key].LEVELS(1).MEMBERS,
+        5,
+        [Measures].[Personnes]
+    ) ON ROWS
 FROM [Humanitaire Maroc]
-WHERE ( [Date].[Annee].&[2025], [Pays Asile].[Pays Key].[Morocco] );
+WHERE (
+    [Date].[Annee].&[2025],
+    FILTER(
+        [Pays Asile].[Pays Key].MEMBERS,
+        [Pays Asile].[Pays Key].CURRENTMEMBER.NAME = "Morocco"
+    ).ITEM(0)
+);
 
 
--- MDX 3 - Top 5 des pays où des Marocains ont demandé l'asile ou sont réfugiés (2025)
--- Même dimension, rôle inversé : le Maroc devient le pays d'ORIGINE
--- Attendu : Italy 13 188, Spain 3 790, France 2 676, Germany 2 606, United States 1 824
+-- =====================================================================
+-- MDX 3 - Top 5 des pays d'accueil des personnes originaires du Maroc
+-- 2025 : Italy 13188, Spain 3790, France 2676, Germany 2606,
+--        United States of America 1824.
+-- =====================================================================
 SELECT
     [Measures].[Personnes] ON COLUMNS,
-    TOPCOUNT([Pays Asile].[Pays Key].[Pays Key].MEMBERS, 5, [Measures].[Personnes]) ON ROWS
+    TOPCOUNT(
+        [Pays Asile].[Pays Key].LEVELS(1).MEMBERS,
+        5,
+        [Measures].[Personnes]
+    ) ON ROWS
 FROM [Humanitaire Maroc]
-WHERE ( [Date].[Annee].&[2025], [Pays Origine].[Pays Key].[Morocco] );
+WHERE (
+    [Date].[Annee].&[2025],
+    FILTER(
+        [Pays Origine].[Pays Key].MEMBERS,
+        [Pays Origine].[Pays Key].CURRENTMEMBER.NAME = "Morocco"
+    ).ITEM(0)
+);
 
 
--- MDX 4 - Pluie de 2025 par région : moyenne par décade et anomalie (100 = normale)
--- Notions : membres calculés du cube (moyenne pondérée), ORDER, NON EMPTY
--- Attendu : Marrakech-Safi la plus sèche (89,4), Rabat-Salé-Kénitra la plus arrosée (116,7)
+-- =====================================================================
+-- MDX 4 - Pluviometrie par region en 2025
+-- Anomalie = 100 pour la normale ; ordre croissant de l'anomalie.
+-- Marrakech-Safi : 89,4 ; Rabat-Sale-Kenitra : 116,7.
+-- =====================================================================
 SELECT
-    { [Measures].[Pluie moyenne], [Measures].[Anomalie pluie] } ON COLUMNS,
-    NON EMPTY ORDER([Region].[Region Key].[Region Key].MEMBERS, [Measures].[Anomalie pluie], BASC) ON ROWS
+    {
+        [Measures].[Pluie moyenne],
+        [Measures].[Anomalie pluie]
+    } ON COLUMNS,
+    NON EMPTY
+        ORDER(
+            [Region].[Region Key].LEVELS(1).MEMBERS,
+            [Measures].[Anomalie pluie],
+            BASC
+        ) ON ROWS
 FROM [Humanitaire Maroc]
 WHERE [Date].[Annee].&[2025];
 
 
--- MDX 5 - Taux de chômage 2024 par région, ensemble / urbain / rural
--- Notions : le membre [All] = total recalculé (le taux national n'est stocké nulle part)
--- Attendu : Maroc (All, All) = 21,3 % ; Guelmim-Oued Noun rural = 38,2 %
+-- =====================================================================
+-- MDX 5 - Taux de chomage 2024 par region et milieu
+-- Le membre All = total recalcule pour les mesures de ratio.
+-- Total national : 21,3 ; Guelmim-Oued Noun rural : 38,2.
+-- =====================================================================
 SELECT
-    { [Milieu].[Milieu Key].[All], [Milieu].[Milieu Key].[Urbain], [Milieu].[Milieu Key].[Rural] } ON COLUMNS,
-    { [Region].[Region Key].[All], [Region].[Region Key].[Region Key].MEMBERS } ON ROWS
+    NON EMPTY
+        [Milieu].[Milieu Key].MEMBERS ON COLUMNS,
+    NON EMPTY
+        [Region].[Region Key].MEMBERS ON ROWS
 FROM [Humanitaire Maroc]
-WHERE [Measures].[Taux de chômage];
+WHERE (
+    [Measures].[Taux de chômage],
+    [Date].[Annee].&[2024]
+);
 
 
--- MDX 6 - Pauvreté multidimensionnelle : 2014, 2024 et évolution par région
--- Notions : WITH MEMBER (membres calculés propres à la requête), tuples
--- Attendu : baisse partout ; Marrakech-Safi -7,9 points (15,8 -> 7,9)
+-- =====================================================================
+-- MDX 6 - Pauvrete multidimensionnelle par region : 2014 vs 2024
+-- WITH MEMBER : mesures temporaires propres a cette requete.
+-- Marrakech-Safi : 15,8 -> 7,9 ; evolution -7,9 points.
+-- =====================================================================
 WITH
     MEMBER [Measures].[Pauvreté 2014] AS
-        ([Measures].[Taux de pauvreté], [Date].[Annee].&[2014]),
+        (
+            [Measures].[Taux de pauvreté],
+            [Date].[Annee].&[2014]
+        ),
         FORMAT_STRING = "0.0"
+
     MEMBER [Measures].[Pauvreté 2024] AS
-        ([Measures].[Taux de pauvreté], [Date].[Annee].&[2024]),
+        (
+            [Measures].[Taux de pauvreté],
+            [Date].[Annee].&[2024]
+        ),
         FORMAT_STRING = "0.0"
+
     MEMBER [Measures].[Évolution (points)] AS
-        [Measures].[Pauvreté 2024] - [Measures].[Pauvreté 2014],
+        [Measures].[Pauvreté 2024]
+        - [Measures].[Pauvreté 2014],
         FORMAT_STRING = "+0.0;-0.0"
+
 SELECT
-    { [Measures].[Pauvreté 2014], [Measures].[Pauvreté 2024], [Measures].[Évolution (points)] } ON COLUMNS,
-    ORDER([Region].[Region Key].[Region Key].MEMBERS, [Measures].[Évolution (points)], BASC) ON ROWS
+    {
+        [Measures].[Pauvreté 2014],
+        [Measures].[Pauvreté 2024],
+        [Measures].[Évolution (points)]
+    } ON COLUMNS,
+    ORDER(
+        [Region].[Region Key].LEVELS(1).MEMBERS,
+        [Measures].[Évolution (points)],
+        BASC
+    ) ON ROWS
 FROM [Humanitaire Maroc]
-WHERE [Milieu].[Milieu Key].[Ensemble];
+WHERE [Milieu].[Milieu Key].&[1];
 
 
--- MDX 7 - Événements de conflit par année et par type (2020-2025)
--- Attendu : 3 654 manifestations en 2024 (record), 2 776 en 2025
+-- =====================================================================
+-- MDX 7 - Evenements de conflit par annee et type (2020-2025)
+-- Manifestations : 3654 en 2024 et 2776 en 2025.
+-- =====================================================================
 SELECT
-    [Type Evenement].[Type Key].[Type Key].MEMBERS ON COLUMNS,
-    { [Date].[Annee].&[2020] : [Date].[Annee].&[2025] } ON ROWS
+    [Type Evenement].[Type Key].LEVELS(1).MEMBERS ON COLUMNS,
+    {
+        [Date].[Annee].&[2020] :
+        [Date].[Annee].&[2025]
+    } ON ROWS
 FROM [Humanitaire Maroc]
 WHERE [Measures].[Événements];
 
 
--- MDX 8 - Évolution annuelle des personnes accueillies au Maroc
--- Notions : PrevMember (navigation dans le temps), membre calculé du cube
--- Attendu : 2019 = 9 721 ; 2020 = 13 516 (+39,0 %) ; 2022 : -0,9 % ; 2024 : -4,0 % ; 2025 = 22 337 (+18,5 %)
+-- =====================================================================
+-- MDX 8 - Evolution annuelle des personnes accueillies au Maroc
+-- PrevMember est utilise dans la mesure calculee du cube.
+-- 2020 : +39,0 ; 2022 : -0,9 ; 2024 : -4,0 ; 2025 : +18,5.
+-- =====================================================================
 SELECT
-    { [Measures].[Personnes], [Measures].[Évolution annuelle personnes] } ON COLUMNS,
-    { [Date].[Annee].&[2019] : [Date].[Annee].&[2025] } ON ROWS
+    {
+        [Measures].[Personnes],
+        [Measures].[Évolution annuelle personnes]
+    } ON COLUMNS,
+    {
+        [Date].[Annee].&[2019] :
+        [Date].[Annee].&[2025]
+    } ON ROWS
 FROM [Humanitaire Maroc]
-WHERE [Pays Asile].[Pays Key].[Morocco];
+WHERE
+    FILTER(
+        [Pays Asile].[Pays Key].MEMBERS,
+        [Pays Asile].[Pays Key].CURRENTMEMBER.NAME = "Morocco"
+    ).ITEM(0);
