@@ -1,0 +1,1538 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20263.26.1022.1645                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='57f5a08b4727dfb7528174c8de83167357e4f6bed519cbdee6e8b1e14355c6a5' _.fcp.WorkbookFingerprinting.true...creator-author-id='57f5a08b4727dfb7528174c8de83167357e4f6bed519cbdee6e8b1e14355c6a5' _.fcp.WorkbookFingerprinting.true...creator-license-type='free' _.fcp.WorkbookFingerprinting.true...creator-machine-id='2c5471c17f3bc1ef8bb14637e3e5cbdd09b92fb3001d36cc18cae9dd19ed45ba' _.fcp.WorkbookFingerprinting.true...license-type='free' _.fcp.WorkbookFingerprinting.true...machine-id='2c5471c17f3bc1ef8bb14637e3e5cbdd09b92fb3001d36cc18cae9dd19ed45ba' original-version='18.1' source-build='2026.3.0 (20263.26.1022.1645)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='MSBI_Cube' inline='true' name='msolap.0r83wgv09nxqon0zto5fm1m4awxa' version='18.1'>
+      <connection authentication='sspi' class='msolap' convert-to-extract-prompted='no' dbname='MSBI_Cube' filename='' server='localhost' tablename='Humanitaire Maroc'>
+        <metadata-records>
+          <metadata-record class='dimension'>
+            <remote-name>[Date]</remote-name>
+            <remote-type>0</remote-type>
+            <local-name>[Date]</local-name>
+            <remote-alias>[Date]</remote-alias>
+            <caption>Date</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>10958</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DEFAULT_HIERARCHY'>&quot;[Date].[Calendrier]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='dimension'>
+            <remote-name>[Groupe Population]</remote-name>
+            <remote-type>0</remote-type>
+            <local-name>[Groupe Population]</local-name>
+            <remote-alias>[Groupe Population]</remote-alias>
+            <caption>Groupe Population</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>4</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DEFAULT_HIERARCHY'>&quot;[Groupe Population].[Groupe Key]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='dimension'>
+            <remote-name>[Measures]</remote-name>
+            <remote-type>1</remote-type>
+            <local-name>[Measures]</local-name>
+            <remote-alias>[Measures]</remote-alias>
+            <caption>Measures</caption>
+            <local-type>real</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>21</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DEFAULT_HIERARCHY'>&quot;[Measures]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='dimension'>
+            <remote-name>[Milieu]</remote-name>
+            <remote-type>0</remote-type>
+            <local-name>[Milieu]</local-name>
+            <remote-alias>[Milieu]</remote-alias>
+            <caption>Milieu</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>4</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DEFAULT_HIERARCHY'>&quot;[Milieu].[Milieu Key]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='dimension'>
+            <remote-name>[Pays Asile]</remote-name>
+            <remote-type>0</remote-type>
+            <local-name>[Pays Asile]</local-name>
+            <remote-alias>[Pays Asile]</remote-alias>
+            <caption>Pays Asile</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>192</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DEFAULT_HIERARCHY'>&quot;[Pays Asile].[Classe de risque]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='dimension'>
+            <remote-name>[Pays Origine]</remote-name>
+            <remote-type>0</remote-type>
+            <local-name>[Pays Origine]</local-name>
+            <remote-alias>[Pays Origine]</remote-alias>
+            <caption>Pays Origine</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>192</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DEFAULT_HIERARCHY'>&quot;[Pays Origine].[Classe de risque]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='dimension'>
+            <remote-name>[Region]</remote-name>
+            <remote-type>0</remote-type>
+            <local-name>[Region]</local-name>
+            <remote-alias>[Region]</remote-alias>
+            <caption>Region</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>13</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DEFAULT_HIERARCHY'>&quot;[Region].[Region Key]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='dimension'>
+            <remote-name>[Type Evenement]</remote-name>
+            <remote-type>0</remote-type>
+            <local-name>[Type Evenement]</local-name>
+            <remote-alias>[Type Evenement]</remote-alias>
+            <caption>Type Evenement</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>4</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DEFAULT_HIERARCHY'>&quot;[Type Evenement].[Type Key]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Date].[Annee]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Date].[Annee]</local-name>
+            <parent-name>[Date]</parent-name>
+            <remote-alias>[Date].[Annee]</remote-alias>
+            <caption>Annee</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>31</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Date].[Annee].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Date].[Calendrier]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Date].[Calendrier]</local-name>
+            <parent-name>[Date]</parent-name>
+            <remote-alias>[Date].[Calendrier]</remote-alias>
+            <caption>Calendrier</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>11350</approx-count>
+            <contains-null>true</contains-null>
+            <default>true</default>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Date].[Calendrier].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>true</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Date].[Date]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Date].[Date]</local-name>
+            <parent-name>[Date]</parent-name>
+            <remote-alias>[Date].[Date]</remote-alias>
+            <caption>Date</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>10958</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Date].[Date].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Date].[Mois]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Date].[Mois]</local-name>
+            <parent-name>[Date]</parent-name>
+            <remote-alias>[Date].[Mois]</remote-alias>
+            <caption>Mois</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>361</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Date].[Mois].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Date].[Annee].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Date].[Annee].[(All)]</local-name>
+            <parent-name>[Date].[Annee]</parent-name>
+            <remote-alias>[Date].[Annee].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Date].[Annee].[Annee]</remote-name>
+            <local-name>[Date].[Annee].[Annee]</local-name>
+            <parent-name>[Date].[Annee]</parent-name>
+            <remote-alias>[Date].[Annee].[Annee].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Annee</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>31</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Date].[Annee] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Date].[Calendrier].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Date].[Calendrier].[(All)]</local-name>
+            <parent-name>[Date].[Calendrier]</parent-name>
+            <remote-alias>[Date].[Calendrier].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Date].[Calendrier].[Annee]</remote-name>
+            <local-name>[Date].[Calendrier].[Annee]</local-name>
+            <parent-name>[Date].[Calendrier]</parent-name>
+            <remote-alias>[Date].[Calendrier].[Annee].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Annee</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>31</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Date].[Annee] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Date].[Calendrier].[Mois]</remote-name>
+            <local-name>[Date].[Calendrier].[Mois]</local-name>
+            <parent-name>[Date].[Calendrier]</parent-name>
+            <remote-alias>[Date].[Calendrier].[Mois].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Mois</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>361</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Date].[Mois] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Date].[Calendrier].[Date]</remote-name>
+            <local-name>[Date].[Calendrier].[Date]</local-name>
+            <parent-name>[Date].[Calendrier]</parent-name>
+            <remote-alias>[Date].[Calendrier].[Date].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Date</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>10958</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Date].[Date] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Date].[Date].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Date].[Date].[(All)]</local-name>
+            <parent-name>[Date].[Date]</parent-name>
+            <remote-alias>[Date].[Date].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Date].[Date].[Date]</remote-name>
+            <local-name>[Date].[Date].[Date]</local-name>
+            <parent-name>[Date].[Date]</parent-name>
+            <remote-alias>[Date].[Date].[Date].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Date</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>10958</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Date].[Date] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Date].[Mois].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Date].[Mois].[(All)]</local-name>
+            <parent-name>[Date].[Mois]</parent-name>
+            <remote-alias>[Date].[Mois].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Date].[Mois].[Mois]</remote-name>
+            <local-name>[Date].[Mois].[Mois]</local-name>
+            <parent-name>[Date].[Mois]</parent-name>
+            <remote-alias>[Date].[Mois].[Mois].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Mois</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>361</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Date].[Mois] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Groupe Population].[Groupe Key]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Groupe Population].[Groupe Key]</local-name>
+            <parent-name>[Groupe Population]</parent-name>
+            <remote-alias>[Groupe Population].[Groupe Key]</remote-alias>
+            <caption>Groupe Key</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>4</approx-count>
+            <contains-null>true</contains-null>
+            <default>true</default>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Groupe Population].[Groupe Key].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Groupe Population].[Groupe Key].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Groupe Population].[Groupe Key].[(All)]</local-name>
+            <parent-name>[Groupe Population].[Groupe Key]</parent-name>
+            <remote-alias>[Groupe Population].[Groupe Key].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Groupe Population].[Groupe Key].[Groupe Key]</remote-name>
+            <local-name>[Groupe Population].[Groupe Key].[Groupe Key]</local-name>
+            <parent-name>[Groupe Population].[Groupe Key]</parent-name>
+            <remote-alias>[Groupe Population].[Groupe Key].[Groupe Key].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Groupe Key</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>4</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Groupe Population].[Groupe Key] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Événements]</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Événements]</local-name>
+            <remote-alias>[Measures].[Événements]</remote-alias>
+            <caption>Événements</caption>
+            <family>Conflits</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[Conflits].[Événements]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Morts]</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Morts]</local-name>
+            <remote-alias>[Measures].[Morts]</remote-alias>
+            <caption>Morts</caption>
+            <family>Conflits</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[Conflits].[Morts]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Population]</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Population]</local-name>
+            <remote-alias>[Measures].[Population]</remote-alias>
+            <caption>Population</caption>
+            <family>Indicateurs</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[Indicateurs].[Population]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Marocains]</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Marocains]</local-name>
+            <remote-alias>[Measures].[Marocains]</remote-alias>
+            <caption>Marocains</caption>
+            <family>Indicateurs</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[Indicateurs].[Marocains]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Etrangers]</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Etrangers]</local-name>
+            <remote-alias>[Measures].[Etrangers]</remote-alias>
+            <caption>Etrangers</caption>
+            <family>Indicateurs</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[Indicateurs].[Etrangers]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Ménages]</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Ménages]</local-name>
+            <remote-alias>[Measures].[Ménages]</remote-alias>
+            <caption>Ménages</caption>
+            <family>Indicateurs</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[Indicateurs].[Ménages]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Analphabètes]</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Analphabètes]</local-name>
+            <remote-alias>[Measures].[Analphabètes]</remote-alias>
+            <caption>Analphabètes</caption>
+            <family>Indicateurs</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[Indicateurs].[Analphabètes]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Actifs]</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Actifs]</local-name>
+            <remote-alias>[Measures].[Actifs]</remote-alias>
+            <caption>Actifs</caption>
+            <family>Indicateurs</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[Indicateurs].[Actifs]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Chômeurs]</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Chômeurs]</local-name>
+            <remote-alias>[Measures].[Chômeurs]</remote-alias>
+            <caption>Chômeurs</caption>
+            <family>Indicateurs</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[Indicateurs].[Chômeurs]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Personnes handicapées]</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Personnes handicapées]</local-name>
+            <remote-alias>[Measures].[Personnes handicapées]</remote-alias>
+            <caption>Personnes handicapées</caption>
+            <family>Indicateurs</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[Indicateurs].[Personnes handicapées]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Personnes]</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Personnes]</local-name>
+            <remote-alias>[Measures].[Personnes]</remote-alias>
+            <caption>Personnes</caption>
+            <family>Refugies</family>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[Refugies].[Personnes]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Pluie moyenne]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pluie moyenne]</local-name>
+            <remote-alias>[Measures].[Pluie moyenne]</remote-alias>
+            <caption>Pluie moyenne</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Pixels] = 0, NULL, [Measures].[Pluie x pixels] / [Measures].[Pixels])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Pluie&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Pluie moyenne]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Normale de pluie]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Normale de pluie]</local-name>
+            <remote-alias>[Measures].[Normale de pluie]</remote-alias>
+            <caption>Normale de pluie</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Pixels] = 0, NULL, [Measures].[Normale x pixels] / [Measures].[Pixels])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Pluie&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Normale de pluie]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Anomalie pluie]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Anomalie pluie]</local-name>
+            <remote-alias>[Measures].[Anomalie pluie]</remote-alias>
+            <caption>Anomalie pluie</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Normale x pixels] = 0, NULL,
+        100 * [Measures].[Pluie x pixels] / [Measures].[Normale x pixels])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Pluie&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Anomalie pluie]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Taux de chômage]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Taux de chômage]</local-name>
+            <remote-alias>[Measures].[Taux de chômage]</remote-alias>
+            <caption>Taux de chômage</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Actifs] = 0, NULL, 100 * [Measures].[Chômeurs] / [Measures].[Actifs])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Recensement 2024&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Taux de chômage]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Taux d&apos;activité]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Taux d&apos;activité]</local-name>
+            <remote-alias>[Measures].[Taux d&apos;activité]</remote-alias>
+            <caption>Taux d&apos;activité</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Population 15 ans et plus] = 0, NULL,
+        100 * [Measures].[Actifs] / [Measures].[Population 15 ans et plus])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Recensement 2024&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Taux d&apos;activité]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Taux d&apos;analphabétisme]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Taux d&apos;analphabétisme]</local-name>
+            <remote-alias>[Measures].[Taux d&apos;analphabétisme]</remote-alias>
+            <caption>Taux d&apos;analphabétisme</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Population 10 ans et plus] = 0, NULL,
+        100 * [Measures].[Analphabètes] / [Measures].[Population 10 ans et plus])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Recensement 2024&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Taux d&apos;analphabétisme]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Taux de handicap]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Taux de handicap]</local-name>
+            <remote-alias>[Measures].[Taux de handicap]</remote-alias>
+            <caption>Taux de handicap</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Population] = 0, NULL, 100 * [Measures].[Personnes handicapées] / [Measures].[Population])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Recensement 2024&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Taux de handicap]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Part des étrangers]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Part des étrangers]</local-name>
+            <remote-alias>[Measures].[Part des étrangers]</remote-alias>
+            <caption>Part des étrangers</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Population] = 0, NULL, 100 * [Measures].[Étrangers] / [Measures].[Population])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.00&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Recensement 2024&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Part des étrangers]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Taille moyenne des ménages]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Taille moyenne des ménages]</local-name>
+            <remote-alias>[Measures].[Taille moyenne des ménages]</remote-alias>
+            <caption>Taille moyenne des ménages</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Ménages] = 0, NULL, [Measures].[Population] / [Measures].[Ménages])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Recensement 2024&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Taille moyenne des ménages]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Taux de pauvreté]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Taux de pauvreté]</local-name>
+            <remote-alias>[Measures].[Taux de pauvreté]</remote-alias>
+            <caption>Taux de pauvreté</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Lignes pauvreté] = 0, NULL, [Measures].[Somme taux pauvreté] / [Measures].[Lignes pauvreté])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Pauvreté&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Taux de pauvreté]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Indice de pauvreté]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Indice de pauvreté]</local-name>
+            <remote-alias>[Measures].[Indice de pauvreté]</remote-alias>
+            <caption>Indice de pauvreté</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Lignes pauvreté] = 0, NULL, [Measures].[Somme IPM] / [Measures].[Lignes pauvreté])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;0.0000&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Pauvreté&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Indice de pauvreté]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Intensité de la pauvreté]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Intensité de la pauvreté]</local-name>
+            <remote-alias>[Measures].[Intensité de la pauvreté]</remote-alias>
+            <caption>Intensité de la pauvreté</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Lignes pauvreté] = 0, NULL, [Measures].[Somme intensité] / [Measures].[Lignes pauvreté])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Pauvreté&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Intensité de la pauvreté]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Taux de vulnérabilité]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Taux de vulnérabilité]</local-name>
+            <remote-alias>[Measures].[Taux de vulnérabilité]</remote-alias>
+            <caption>Taux de vulnérabilité</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF([Measures].[Lignes pauvreté] = 0, NULL, [Measures].[Somme vulnérabilité] / [Measures].[Lignes pauvreté])&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Pauvreté&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Taux de vulnérabilité]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='measure'>
+            <remote-name>[Measures].[Évolution annuelle personnes]</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Évolution annuelle personnes]</local-name>
+            <remote-alias>[Measures].[Évolution annuelle personnes]</remote-alias>
+            <caption>Évolution annuelle personnes</caption>
+            <local-type>real</local-type>
+            <aggregation>Avg</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='EXPRESSION'>&quot;IIF(([Measures].[Personnes], [Date].[Annee].CurrentMember.PrevMember) = 0, NULL,
+        100 * ([Measures].[Personnes] / ([Measures].[Personnes], [Date].[Annee].CurrentMember.PrevMember) - 1))&quot;</attribute>
+              <attribute datatype='string' name='FORMAT_STRING'>&quot;+\#,\#\#0.0;-\#,\#\#0.0&quot;</attribute>
+              <attribute datatype='string' name='MEASURE_DISPLAY_FOLDER'>&quot;Réfugiés&quot;</attribute>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;[].[Évolution annuelle personnes]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Milieu].[Milieu Key]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Milieu].[Milieu Key]</local-name>
+            <parent-name>[Milieu]</parent-name>
+            <remote-alias>[Milieu].[Milieu Key]</remote-alias>
+            <caption>Milieu Key</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>4</approx-count>
+            <contains-null>true</contains-null>
+            <default>true</default>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Milieu].[Milieu Key].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Milieu].[Milieu Key].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Milieu].[Milieu Key].[(All)]</local-name>
+            <parent-name>[Milieu].[Milieu Key]</parent-name>
+            <remote-alias>[Milieu].[Milieu Key].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Milieu].[Milieu Key].[Milieu Key]</remote-name>
+            <local-name>[Milieu].[Milieu Key].[Milieu Key]</local-name>
+            <parent-name>[Milieu].[Milieu Key]</parent-name>
+            <remote-alias>[Milieu].[Milieu Key].[Milieu Key].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Milieu Key</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>4</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Milieu].[Milieu Key] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Pays Asile].[Classe de risque]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Pays Asile].[Classe de risque]</local-name>
+            <parent-name>[Pays Asile]</parent-name>
+            <remote-alias>[Pays Asile].[Classe de risque]</remote-alias>
+            <caption>Pays Asile.Classe de risque</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>6</approx-count>
+            <contains-null>true</contains-null>
+            <default>true</default>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Pays Asile].[Classe de risque].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Pays Asile].[Pays Key]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Pays Asile].[Pays Key]</local-name>
+            <parent-name>[Pays Asile]</parent-name>
+            <remote-alias>[Pays Asile].[Pays Key]</remote-alias>
+            <caption>Pays Asile.Pays Key</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>192</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Pays Asile].[Pays Key].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Pays Asile].[Classe de risque].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Pays Asile].[Classe de risque].[(All)]</local-name>
+            <parent-name>[Pays Asile].[Classe de risque]</parent-name>
+            <remote-alias>[Pays Asile].[Classe de risque].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Pays Asile].[Classe de risque].[Classe de risque]</remote-name>
+            <local-name>[Pays Asile].[Classe de risque].[Classe de risque]</local-name>
+            <parent-name>[Pays Asile].[Classe de risque]</parent-name>
+            <remote-alias>[Pays Asile].[Classe de risque].[Classe de risque].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Classe de risque</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>6</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Pays Asile].[Classe de risque] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Pays Asile].[Pays Key].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Pays Asile].[Pays Key].[(All)]</local-name>
+            <parent-name>[Pays Asile].[Pays Key]</parent-name>
+            <remote-alias>[Pays Asile].[Pays Key].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Pays Asile].[Pays Key].[Pays Key]</remote-name>
+            <local-name>[Pays Asile].[Pays Key].[Pays Key]</local-name>
+            <parent-name>[Pays Asile].[Pays Key]</parent-name>
+            <remote-alias>[Pays Asile].[Pays Key].[Pays Key].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Pays Key</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>192</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Pays Asile].[Pays Key] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Pays Origine].[Classe de risque]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Pays Origine].[Classe de risque]</local-name>
+            <parent-name>[Pays Origine]</parent-name>
+            <remote-alias>[Pays Origine].[Classe de risque]</remote-alias>
+            <caption>Pays Origine.Classe de risque</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>6</approx-count>
+            <contains-null>true</contains-null>
+            <default>true</default>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Pays Origine].[Classe de risque].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Pays Origine].[Pays Key]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Pays Origine].[Pays Key]</local-name>
+            <parent-name>[Pays Origine]</parent-name>
+            <remote-alias>[Pays Origine].[Pays Key]</remote-alias>
+            <caption>Pays Origine.Pays Key</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>192</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Pays Origine].[Pays Key].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Pays Origine].[Classe de risque].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Pays Origine].[Classe de risque].[(All)]</local-name>
+            <parent-name>[Pays Origine].[Classe de risque]</parent-name>
+            <remote-alias>[Pays Origine].[Classe de risque].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Pays Origine].[Classe de risque].[Classe de risque]</remote-name>
+            <local-name>[Pays Origine].[Classe de risque].[Classe de risque]</local-name>
+            <parent-name>[Pays Origine].[Classe de risque]</parent-name>
+            <remote-alias>[Pays Origine].[Classe de risque].[Classe de risque].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Classe de risque</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>6</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Pays Origine].[Classe de risque] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Pays Origine].[Pays Key].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Pays Origine].[Pays Key].[(All)]</local-name>
+            <parent-name>[Pays Origine].[Pays Key]</parent-name>
+            <remote-alias>[Pays Origine].[Pays Key].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Pays Origine].[Pays Key].[Pays Key]</remote-name>
+            <local-name>[Pays Origine].[Pays Key].[Pays Key]</local-name>
+            <parent-name>[Pays Origine].[Pays Key]</parent-name>
+            <remote-alias>[Pays Origine].[Pays Key].[Pays Key].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Pays Key</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>192</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Pays Origine].[Pays Key] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Region].[Region Key]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Region].[Region Key]</local-name>
+            <parent-name>[Region]</parent-name>
+            <remote-alias>[Region].[Region Key]</remote-alias>
+            <caption>Region Key</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>13</approx-count>
+            <contains-null>true</contains-null>
+            <default>true</default>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Region].[Region Key].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Region].[Region Key].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Region].[Region Key].[(All)]</local-name>
+            <parent-name>[Region].[Region Key]</parent-name>
+            <remote-alias>[Region].[Region Key].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Region].[Region Key].[Region Key]</remote-name>
+            <local-name>[Region].[Region Key].[Region Key]</local-name>
+            <parent-name>[Region].[Region Key]</parent-name>
+            <remote-alias>[Region].[Region Key].[Region Key].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Region Key</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>13</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Region].[Region Key] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='hierarchy'>
+            <remote-name>[Type Evenement].[Type Key]</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[Type Evenement].[Type Key]</local-name>
+            <parent-name>[Type Evenement]</parent-name>
+            <remote-alias>[Type Evenement].[Type Key]</remote-alias>
+            <caption>Type Key</caption>
+            <aggregation>Count</aggregation>
+            <approx-count>4</approx-count>
+            <contains-null>true</contains-null>
+            <default>true</default>
+            <attributes>
+              <attribute datatype='string' name='ALL_MEMBER'>&quot;[Type Evenement].[Type Key].[All]&quot;</attribute>
+              <attribute datatype='string' name='HIERARCHY_DISPLAY_FOLDER'>&quot;&quot;</attribute>
+              <attribute datatype='boolean' name='HIERARCHY_USER'>false</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Type Evenement].[Type Key].[(All)]</remote-name>
+            <remote-type>all</remote-type>
+            <local-name>[Type Evenement].[Type Key].[(All)]</local-name>
+            <parent-name>[Type Evenement].[Type Key]</parent-name>
+            <remote-alias>[Type Evenement].[Type Key].[(All)].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>(All)</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='level'>
+            <remote-name>[Type Evenement].[Type Key].[Type Key]</remote-name>
+            <local-name>[Type Evenement].[Type Key].[Type Key]</local-name>
+            <parent-name>[Type Evenement].[Type Key]</parent-name>
+            <remote-alias>[Type Evenement].[Type Key].[Type Key].[MEMBER_UNIQUE_NAME]</remote-alias>
+            <caption>Type Key</caption>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>4</approx-count>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='SQL_COLUMN_NAME'>&quot;NAME( [$Type Evenement].[Type Key] )&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Conflits</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Conflits</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Date].[Date]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Date]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Conflits</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Conflits</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Type Evenement].[Type Key]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Type Evenement]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Indicateurs</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Indicateurs</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Date].[Date]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Date]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Indicateurs</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Indicateurs</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Milieu].[Milieu Key]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Milieu]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Indicateurs</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Indicateurs</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Region].[Region Key]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Region]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Pauvrete</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Pauvrete</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Date].[Date]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Date]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Pauvrete</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Pauvrete</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Milieu].[Milieu Key]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Milieu]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Pauvrete</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Pauvrete</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Region].[Region Key]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Region]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Pluie</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Pluie</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Date].[Date]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Date]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Pluie</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Pluie</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Region].[Region Key]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Region]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Refugies</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Refugies</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Date].[Date]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Date]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Refugies</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Refugies</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Groupe Population].[Groupe Key]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Groupe Population]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Refugies</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Refugies</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Pays Asile].[Pays Key]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Pays Asile]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='granularity'>
+            <remote-name>Refugies</remote-name>
+            <remote-type>0</remote-type>
+            <remote-alias>Refugies</remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DIMENSION_GRANULARITY'>&quot;[Pays Origine].[Pays Key]&quot;</attribute>
+              <attribute datatype='string' name='DIMENSION_UNIQUE_NAME'>&quot;[Pays Origine]&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;France&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='P-Anomalie'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='MSBI_Cube' name='msolap.0r83wgv09nxqon0zto5fm1m4awxa' />
+          </datasources>
+          <datasource-dependencies datasource='msolap.0r83wgv09nxqon0zto5fm1m4awxa'>
+            <column-instance column='[Date].[Annee].[Annee]' derivation='None' name='[Date].[Annee].[none:Annee:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Region].[Region Key].[Region Key]' derivation='None' name='[Region].[Region Key].[none:Region Key:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Anomalie pluie]' derivation='None' name='[none:Anomalie pluie:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[Date].[Annee]'>
+            <groupfilter from='&quot;[Date].[Annee].&amp;[2022]&quot;' function='range' level='[Date].[Annee].[Annee]' to='&quot;[Date].[Annee].&amp;[2025]&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-level='0' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[Date].[Annee]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[Date].[Annee].[none:Annee:nk]' value='265' />
+            <format attr='height' field='[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[Region].[Region Key].[none:Region Key:nk]' value='74' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[Region].[Region Key].[none:Region Key:nk]' value='272' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' center='100.0' field='[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[none:Anomalie pluie:qk]' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[none:Anomalie pluie:qk]' />
+              <text column='[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[none:Anomalie pluie:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='center' />
+                <format attr='wrap' value='off' />
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='11' />
+                <format attr='font-weight' value='bold' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[Region].[Region Key].[none:Region Key:nk]</rows>
+        <cols>[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[Date].[Annee].[none:Annee:nk]</cols>
+      </table>
+      <simple-id uuid='{383A00BE-9CF1-4711-9847-C080A70E82B8}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' maximized='true' name='P-Anomalie'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='170'>
+            <card pane-specification-id='0' param='[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[none:Anomalie pluie:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[Date].[Annee].[none:Annee:nk]</field>
+            <field>[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[Date].[Calendrier].[none:Annee:nk]</field>
+            <field>[msolap.0r83wgv09nxqon0zto5fm1m4awxa].[Region].[Region Key].[none:Region Key:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{DC3A0921-6D20-45B6-A571-CD924B812D2E}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='P-Anomalie' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
