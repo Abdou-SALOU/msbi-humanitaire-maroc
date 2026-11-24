@@ -27,15 +27,15 @@ Tableau Desktop > Se connecter > À un serveur > **Microsoft Analysis Services**
 | Filtres | Année et Milieu en haut à droite, appliqués à toutes les feuilles du tableau de bord |
 | Noms de feuilles | préfixe `R-`, `G-`, `P-`, `C-` selon le tableau de bord (Réfugiés, réGions, Pluie, Conflits) |
 
-## 3. Tableaux de bord d'Abdou
+## 3. Réfugiés et régions
 
 ### TdB 1 « Réfugiés et demandeurs d'asile au Maroc »
 
 | Feuille | Colonnes | Lignes | Marques / filtres |
 |---|---|---|---|
-| `R-Evolution` | Date > Annee | Personnes | Courbe, couleur = Groupe ; filtre Pays Asile = Morocco ; années 2010-2025 |
-| `R-Top origines` | Personnes | Pays Origine > Pays (Top 10 par Personnes) | Barres ; filtre Pays Asile = Morocco ; filtre Annee |
-| `R-Marocains a l'etranger` | Personnes | Pays Asile > Pays (Top 10) | Barres ; filtre Pays Origine = Morocco ; filtre Annee |
+| `R-Evolution` | Date > Annee | Personnes | Courbe, couleur = Groupe Key ; filtre Pays Asile = Morocco ; années 2010-2025 |
+| `R-Top origines` | Personnes | Pays Origine > Pays Key (tri décroissant) | Barres ; filtre Pays Asile = Morocco ; filtre Annee |
+| `R-Marocains à l'étranger` | Personnes | Pays Asile > Pays Key (tri décroissant) | Barres ; filtre Pays Origine = Morocco ; filtre Annee |
 | `R-KPI` | | | Texte : Personnes (2025) et Évolution annuelle personnes |
 
 Message à faire passer : le nombre de personnes accueillies au Maroc a plus que doublé depuis 2019 (9 721 -> 22 337), surtout des demandeurs d'asile venus du Soudan et de Syrie ; dans l'autre sens, les Marocains demandent surtout l'asile en Italie.
@@ -44,37 +44,35 @@ Message à faire passer : le nombre de personnes accueillies au Maroc a plus que
 
 | Feuille | Construction |
 |---|---|
-| `G-Pauvrete 2014-2024` | Lignes : Region ; Colonnes : Taux de pauvreté ; Couleur : Annee (2014 gris, 2024 bleu) ; filtre Milieu = Ensemble ; tri par 2024. Variante « haltère » : cercles + ligne entre 2014 et 2024 |
-| `G-Chomage urbain rural` | Lignes : Region ; Colonnes : Taux de chômage ; Couleur : Milieu (Urbain / Rural) ; barres côte à côte |
-| `G-Etrangers` | Lignes : Region ; Colonnes : Part des étrangers ; barres triées |
+| `G-Pauvreté` | Lignes : Region Key, Annee ; Colonnes : Taux de pauvreté ; Couleur : Annee (2014 gris, 2024 bleu) ; filtre Milieu = Ensemble ; tri par 2024. Variante « haltère » : cercles + ligne entre 2014 et 2024 |
+| `G-Chômage urbain rural` | Lignes : Region Key, Milieu Key ; Colonnes : Taux de chômage ; Couleur : Milieu Key (Urbain / Rural) ; barres côte à côte |
+| `G-Étrangers` | Lignes : Region Key ; Colonnes : Part des étrangers ; barres triées |
 | `G-KPI` | Population 2024, Taux de chômage national, Taux de pauvreté moyen 2024 |
 
 Message : la pauvreté a baissé partout ; le chômage reste très élevé dans l'Oriental (30 %) et à Guelmim-Oued Noun (38 % en rural).
 
-## 4. Tableaux de bord d'Esso
+## 4. Pluie et conflits
 
 ### TdB 3 « Pluviométrie »
 
 | Feuille | Construction |
 |---|---|
-| `P-Anomalie par region et annee` | Carte de chaleur : Lignes Region, Colonnes Annee, Couleur Anomalie pluie (divergente centrée sur 100) |
-| `P-Saison` | Courbe : Colonnes Date > Calendrier (mois), Lignes Pluie moyenne et Normale de pluie, filtre Region |
-| `P-Classement 2025` | Barres Anomalie pluie par région, filtre Annee = 2025 |
+| `P-Anomalie` | Carte de chaleur : Lignes Region Key, Colonnes Annee, Couleur Anomalie pluie (divergente centrée sur 100) |
+| `P-Saison` | Courbe : Colonnes Date > Calendrier (mois), Lignes Pluie moyenne et Normale de pluie, filtre Annee = 2025 |
+| `P-Classement` | Barres Anomalie pluie par région, filtre Annee = 2025, tri croissant |
+
+Pourquoi 2025 : dernière année avec 12 mois de pluie (2026 s'arrête en octobre).
 
 ### TdB 4 « Conflits et tensions »
 
 | Feuille | Construction |
 |---|---|
-| `C-Evenements par an` | Barres empilées : Annee x Événements, couleur Type ; **attention : ne pas sommer les types**, montrer côte à côte ou choisir un type |
+| `C-Evenements par an` | Barres empilées : Annee x Événements, couleur Type Key ; **attention : ne pas sommer les types**, montrer côte à côte ou choisir un type |
 | `C-Manifestations par mois` | Courbe mensuelle des manifestations 2020-2026 |
 | `C-Morts` | Morts par an (violence politique) |
 
-## 5. Synthèse (ensemble)
+## 5. Assemblage
 
-Un tableau de bord d'une page avec les 4 chiffres clés et un graphique par thème, chacun cliquable (action de filtre sur l'année).
-
-## 6. Assemblage
-
-Chacun travaille dans son classeur (`tableau/abdou.twb`, `tableau/essorong.twb`). À la fin : ouvrir un classeur, copier les feuilles de l'autre (clic droit > Copier / Coller), puis **Fichier > Enregistrer sous > `tableau/final.twbx`** (format empaqueté).
+Classeur final : `tableau/Humanitaire_Maroc_Tableau.twb` (14 feuilles, 4 tableaux de bord : TdB Réfugiés, TdB Régions, TdB Pluie, TdB Conflits), connecté en direct au cube `Humanitaire Maroc` sur `localhost`.
 
 **Captures T2 à T6** : chaque tableau de bord en plein écran.
