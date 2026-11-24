@@ -10,10 +10,10 @@
 -- Notions : axes COLUMNS/ROWS, plage de membres (:), découpage WHERE (slicer), NON EMPTY
 -- Attendu : 2025 -> 15 033 demandeurs d'asile, 7 304 réfugiés
 SELECT
-    NON EMPTY [Groupe Population].[Groupe].[Groupe].MEMBERS ON COLUMNS,
+    NON EMPTY [Groupe Population].[Groupe Key].[Groupe Key].MEMBERS ON COLUMNS,
     { [Date].[Annee].&[2019] : [Date].[Annee].&[2025] } ON ROWS
 FROM [Humanitaire Maroc]
-WHERE ( [Measures].[Personnes], [Pays Asile].[Pays].[Morocco] );
+WHERE ( [Measures].[Personnes], [Pays Asile].[Pays Key].[Morocco] );
 
 
 -- MDX 2 - Top 5 des pays d'origine des personnes accueillies au Maroc en 2025
@@ -21,9 +21,9 @@ WHERE ( [Measures].[Personnes], [Pays Asile].[Pays].[Morocco] );
 -- Attendu : Sudan 5 291, Syria 5 216, Guinea 2 366, Côte d'Ivoire 1 780, Senegal 1 584
 SELECT
     [Measures].[Personnes] ON COLUMNS,
-    TOPCOUNT([Pays Origine].[Pays].[Pays].MEMBERS, 5, [Measures].[Personnes]) ON ROWS
+    TOPCOUNT([Pays Origine].[Pays Key].[Pays Key].MEMBERS, 5, [Measures].[Personnes]) ON ROWS
 FROM [Humanitaire Maroc]
-WHERE ( [Date].[Annee].&[2025], [Pays Asile].[Pays].[Morocco] );
+WHERE ( [Date].[Annee].&[2025], [Pays Asile].[Pays Key].[Morocco] );
 
 
 -- MDX 3 - Top 5 des pays où des Marocains ont demandé l'asile ou sont réfugiés (2025)
@@ -31,9 +31,9 @@ WHERE ( [Date].[Annee].&[2025], [Pays Asile].[Pays].[Morocco] );
 -- Attendu : Italy 13 188, Spain 3 790, France 2 676, Germany 2 606, United States 1 824
 SELECT
     [Measures].[Personnes] ON COLUMNS,
-    TOPCOUNT([Pays Asile].[Pays].[Pays].MEMBERS, 5, [Measures].[Personnes]) ON ROWS
+    TOPCOUNT([Pays Asile].[Pays Key].[Pays Key].MEMBERS, 5, [Measures].[Personnes]) ON ROWS
 FROM [Humanitaire Maroc]
-WHERE ( [Date].[Annee].&[2025], [Pays Origine].[Pays].[Morocco] );
+WHERE ( [Date].[Annee].&[2025], [Pays Origine].[Pays Key].[Morocco] );
 
 
 -- MDX 4 - Pluie de 2025 par région : moyenne par décade et anomalie (100 = normale)
@@ -41,7 +41,7 @@ WHERE ( [Date].[Annee].&[2025], [Pays Origine].[Pays].[Morocco] );
 -- Attendu : Marrakech-Safi la plus sèche (89,4), Rabat-Salé-Kénitra la plus arrosée (116,7)
 SELECT
     { [Measures].[Pluie moyenne], [Measures].[Anomalie pluie] } ON COLUMNS,
-    NON EMPTY ORDER([Region].[Region].[Region].MEMBERS, [Measures].[Anomalie pluie], BASC) ON ROWS
+    NON EMPTY ORDER([Region].[Region Key].[Region Key].MEMBERS, [Measures].[Anomalie pluie], BASC) ON ROWS
 FROM [Humanitaire Maroc]
 WHERE [Date].[Annee].&[2025];
 
@@ -50,8 +50,8 @@ WHERE [Date].[Annee].&[2025];
 -- Notions : le membre [All] = total recalculé (le taux national n'est stocké nulle part)
 -- Attendu : Maroc (All, All) = 21,3 % ; Guelmim-Oued Noun rural = 38,2 %
 SELECT
-    { [Milieu].[Milieu].[All], [Milieu].[Milieu].[Urbain], [Milieu].[Milieu].[Rural] } ON COLUMNS,
-    { [Region].[Region].[All], [Region].[Region].[Region].MEMBERS } ON ROWS
+    { [Milieu].[Milieu Key].[All], [Milieu].[Milieu Key].[Urbain], [Milieu].[Milieu Key].[Rural] } ON COLUMNS,
+    { [Region].[Region Key].[All], [Region].[Region Key].[Region Key].MEMBERS } ON ROWS
 FROM [Humanitaire Maroc]
 WHERE [Measures].[Taux de chômage];
 
@@ -60,20 +60,26 @@ WHERE [Measures].[Taux de chômage];
 -- Notions : WITH MEMBER (membres calculés propres à la requête), tuples
 -- Attendu : baisse partout ; Marrakech-Safi -7,9 points (15,8 -> 7,9)
 WITH
-    MEMBER [Measures].[Pauvreté 2014] AS ([Measures].[Taux de pauvreté], [Date].[Annee].&[2014]), FORMAT_STRING = "0.0"
-    MEMBER [Measures].[Pauvreté 2024] AS ([Measures].[Taux de pauvreté], [Date].[Annee].&[2024]), FORMAT_STRING = "0.0"
-    MEMBER [Measures].[Évolution (points)] AS [Measures].[Pauvreté 2024] - [Measures].[Pauvreté 2014], FORMAT_STRING = "+0.0;-0.0"
+    MEMBER [Measures].[Pauvreté 2014] AS
+        ([Measures].[Taux de pauvreté], [Date].[Annee].&[2014]),
+        FORMAT_STRING = "0.0"
+    MEMBER [Measures].[Pauvreté 2024] AS
+        ([Measures].[Taux de pauvreté], [Date].[Annee].&[2024]),
+        FORMAT_STRING = "0.0"
+    MEMBER [Measures].[Évolution (points)] AS
+        [Measures].[Pauvreté 2024] - [Measures].[Pauvreté 2014],
+        FORMAT_STRING = "+0.0;-0.0"
 SELECT
     { [Measures].[Pauvreté 2014], [Measures].[Pauvreté 2024], [Measures].[Évolution (points)] } ON COLUMNS,
-    ORDER([Region].[Region].[Region].MEMBERS, [Measures].[Évolution (points)], BASC) ON ROWS
+    ORDER([Region].[Region Key].[Region Key].MEMBERS, [Measures].[Évolution (points)], BASC) ON ROWS
 FROM [Humanitaire Maroc]
-WHERE [Milieu].[Milieu].[Ensemble];
+WHERE [Milieu].[Milieu Key].[Ensemble];
 
 
 -- MDX 7 - Événements de conflit par année et par type (2020-2025)
 -- Attendu : 3 654 manifestations en 2024 (record), 2 776 en 2025
 SELECT
-    [Type Evenement].[Type].[Type].MEMBERS ON COLUMNS,
+    [Type Evenement].[Type Key].[Type Key].MEMBERS ON COLUMNS,
     { [Date].[Annee].&[2020] : [Date].[Annee].&[2025] } ON ROWS
 FROM [Humanitaire Maroc]
 WHERE [Measures].[Événements];
@@ -86,4 +92,4 @@ SELECT
     { [Measures].[Personnes], [Measures].[Évolution annuelle personnes] } ON COLUMNS,
     { [Date].[Annee].&[2019] : [Date].[Annee].&[2025] } ON ROWS
 FROM [Humanitaire Maroc]
-WHERE [Pays Asile].[Pays].[Morocco];
+WHERE [Pays Asile].[Pays Key].[Morocco];

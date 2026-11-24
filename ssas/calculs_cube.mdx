@@ -44,7 +44,7 @@ CREATE MEMBER CURRENTCUBE.[Measures].[Taux de handicap]
  FORMAT_STRING = "#,##0.0", DISPLAY_FOLDER = 'Recensement 2024', VISIBLE = 1;
 
 CREATE MEMBER CURRENTCUBE.[Measures].[Part des étrangers]
- AS IIF([Measures].[Population] = 0, NULL, 100 * [Measures].[Étrangers] / [Measures].[Population]),
+ AS IIF([Measures].[Population] = 0, NULL, 100 * [Measures].[Etrangers] / [Measures].[Population]),
  FORMAT_STRING = "#,##0.00", DISPLAY_FOLDER = 'Recensement 2024', VISIBLE = 1;
 
 CREATE MEMBER CURRENTCUBE.[Measures].[Taille moyenne des ménages]
